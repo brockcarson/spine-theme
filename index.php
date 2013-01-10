@@ -15,11 +15,11 @@
  */
 ?>
 <?php get_header(); ?>
-
+<?php $content_grid_classes = pdw_spine_fetch_content_grid_classes(); ?>
 <?php do_atomic( 'before_content' ); // pdw_spine_before_content ?>
 
 <!-- Main Blog Content -->
-<div class="nine columns" role="content">
+<div class="<?php echo $content_grid_classes; ?>" role="content">
 
 			<?php do_atomic( 'open_content' ); // pdw_spine_open_content ?>
 

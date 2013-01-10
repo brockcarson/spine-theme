@@ -63,7 +63,7 @@ function pdw_spine_numeric_posts_nav() {
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="row"><ul class="pagination">' . "\n";
+	echo '<div class="row"><ul class="pagination twelve columns">' . "\n";
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )

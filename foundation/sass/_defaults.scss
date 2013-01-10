@@ -105,3 +105,11 @@ img.size-full {
 [rel="tag"]{
 	@extend .label;
 }
+
+.comment-list, .comment-list .children {
+	list-style-type: none;
+}
+
+input[type="submit"]{
+	@extend .button;
+}

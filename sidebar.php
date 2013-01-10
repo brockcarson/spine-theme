@@ -18,7 +18,8 @@
 <?php if ( is_active_sidebar( 'primary' ) ) : ?>
 
 <?php do_atomic( 'before_sidebar_primary' ); // spine_before_sidebar_primary ?>
-<aside class="three columns">
+<?php $sidebar_grid_classes = pdw_spine_fetch_sidebar_grid_classes(); ?>
+<aside class="<?php echo $sidebar_grid_classes; ?>">
 
 	<?php do_atomic( 'open_sidebar_primary' ); // spine_open_sidebar_primary ?>
 

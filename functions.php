@@ -39,6 +39,10 @@ function pdw_spi_theme_setup(){
 	/** Use Foundation makrup for galleries */
 	include_once 'includes/gallery-shortcode.php';
 
+	/** Include theme customizer options */
+	include_once 'includes/spine-customizer.php';
+	add_action('customize_register','pdw_spine_customize_register');
+
 	/** Load main stylesheet */
 	add_action( 'wp_enqueue_scripts', 'pdw_spine_load_styles' );
 
@@ -56,6 +60,7 @@ function pdw_spi_theme_setup(){
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
+
 	//add_theme_support( 'hybrid-core-seo' );
 
 	/** Add theme support for framework extensions. */
@@ -70,11 +75,13 @@ function pdw_spi_theme_setup(){
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
 
-	/** Add support for WordPress custom background. */
+	add_theme_support('theme-layouts', array('2c-l', '2c-r', '1c'));
+
+	/* Add support for WordPress custom background. */
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/bg.png',
+			'default-image' => trailingslashit( get_template_directory_uri() ) . 'backgrounds/satinweave.png',
 			'wp-head-callback' => 'pdw_spine_custom_background_callback'
 		)
 	);
@@ -92,6 +99,8 @@ function pdw_spi_theme_setup(){
 		)
 	);
 
+	add_theme_support( 'featured-header' );
+
 	/** Set content width. */
 	hybrid_set_content_width( 637 );
 
@@ -108,7 +117,7 @@ function pdw_spi_theme_setup(){
 		include('tinymce-kit/tinymce-kit.php');
 	} // end if
 
-	add_filter('post_thumbnail_html', 'pdw_spine_add_thumbnail_class',10, 3 );
+	//add_filter('post_thumbnail_html', 'pdw_spine_add_thumbnail_class',10, 3 );
 	add_filter('get_the_image', 'pdw_spine_add_featured_img_class',10, 1 );
 }
 add_action( 'after_setup_theme', 'pdw_spi_theme_setup' );
@@ -128,8 +137,6 @@ function pdw_spine_load_styles() {
  * Load the necessary javascript files
  */
 function pdw_spine_load_scripts() {
-
-	//wp_enqueue_script( 'modernizr', PDW_SPINE_JS_URL . 'modernizr.foundation.js', array( 'jquery' ), PDW_SPINE_VERSION, false );
 
 	//wp_enqueue_script( 'foundation-cookie', PDW_SPINE_JS_URL . 'jquery.cookie.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 	//wp_enqueue_script( 'foundation-event-move', PDW_SPINE_JS_URL . 'jquery.event.move.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
@@ -237,14 +244,69 @@ function pdw_spine_register_widgets(){
 	register_widget( 'Spine_Widget_Nav_Menu' );
 }
 
-function pdw_spine_add_thumbnail_class($html, $post_id, $post_image_id){
-	$html = '<a class="th" href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+function pdw_spine_add_featured_img_class($img_html){
+	/** Only do this is there's an image */
+	if(!empty($img_html))
+		$img_html = '<a class="th" href="' . get_permalink( get_the_ID() ) . '" title="' . esc_attr( get_post_field( 'post_title', get_the_ID() ) ) . '">' . $img_html . '</a>';
 
-	return $html;
+	return $img_html;
 }
 
-function pdw_spine_add_featured_img_class($img_html){
-	$html = '<a class="th" href="' . get_permalink( get_the_ID() ) . '" title="' . esc_attr( get_post_field( 'post_title', get_the_ID() ) ) . '">' . $img_html . '</a>';
+function pdw_spine_fetch_bg_images(){
+	$directory = PDW_SPINE_DIR . '/backgrounds/';
+	//get all image files with a .jpg extension.
+	$images = glob($directory . "*.jpg");
 
-	return $html;
+	return $images;
+}
+
+
+function pdw_spine_fetch_content_grid_classes(){
+
+	/** Set the grid column span */
+	$span_cols = apply_filters('spine_content_span_cols', 'nine columns');
+ /** Layout logic  */
+  $layout = get_post_layout( get_the_ID() );
+switch($layout){
+	case 'default' :
+		$content_classes = $span_cols;
+		break;
+	case '1c' :
+		$content_classes = "twelve columns";
+		break;
+	case '2c-r':
+		$content_classes = $span_cols;
+		break;
+	case '2c-l':
+		$content_classes = $span_cols . " push-three";
+		break;
+	default:
+		$content_classes = $span_cols;
+		break;
+}
+return $content_classes;
+}
+
+function pdw_spine_fetch_sidebar_grid_classes(){
+	$span_cols = apply_filters('spine_sidebar_span_cols', 'three columns');
+	/** Layout logic  */
+	$layout = get_post_layout( get_the_ID() );
+	switch($layout){
+		case 'default' :
+			$sidebar_classes = $span_cols;
+			break;
+		case '1c' :
+			$sidebar_classes = "twelve columns";
+			break;
+		case '2c-r':
+			$sidebar_classes = $span_cols;
+			break;
+		case '2c-l':
+			$sidebar_classes = $span_cols . " pull-nine";
+			break;
+		default:
+			$sidebar_classes = $span_cols;
+			break;
+	}
+return $sidebar_classes;
 }

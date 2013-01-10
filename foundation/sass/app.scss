@@ -1,4 +1,4 @@
-// You custom settings file to override Foundation defaults
+// Your custom settings file to override Foundation defaults
 @import "settings";
 
 // Comment out this import if you are customizing you imports below
@@ -6,8 +6,6 @@
 
 // Spine styles
 @import "defaults";
-
-@import "general_foundicons";
 // ----------------------------------------
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
@@ -51,5 +49,4 @@
 // @import "foundation/components/modules/offcanvas";
 
 // Media Queries Overrides
-//@import "foundation/components/modules/mqueries";
-
+// @import "foundation/components/modules/mqueries";

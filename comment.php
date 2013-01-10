@@ -20,28 +20,32 @@ global $post, $comment;
 
 	<?php do_atomic( 'before_comment' ); // spine_before_comment ?>
 
-    <div class="comment-wrap">
+    <div class="comment-wrap row">
 
 			<?php do_atomic( 'open_comment' ); // spine_open_comment ?>
 
-			<?php echo hybrid_avatar(); ?>
+        <div class="two columns mobile-one"><?php echo hybrid_avatar(); ?></div>
 
-			<?php echo apply_atomic_shortcode( 'comment_meta', '<div class="comment-meta">[comment-author] [comment-published] [comment-permalink before="| "] [comment-edit-link before="| "] [comment-reply-link before="| "]</div>' ); ?>
+        <div class="ten columns">
+					<?php echo apply_atomic_shortcode( 'comment_meta', '<div class="comment-meta"><p>[comment-author] [comment-published] [comment-permalink before="| "] [comment-edit-link before="| "] [comment-reply-link before="| "]</p></div>' ); ?>
 
-        <div class="comment-content comment-text">
-					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<?php echo apply_atomic_shortcode( 'comment_moderation', '<p class="alert moderation">' . __( 'Your comment is awaiting moderation.', 'spine' ) . '</p>' ); ?>
-					<?php endif; ?>
+            <div class="comment-content comment-text">
+							<?php if ( '0' == $comment->comment_approved ) : ?>
+							<?php echo apply_atomic_shortcode( 'comment_moderation', '<p class="alert moderation">' . __( 'Your comment is awaiting moderation.', 'spine' ) . '</p>' ); ?>
+							<?php endif; ?>
 
-					<?php comment_text( $comment->comment_ID ); ?>
-        </div><!-- .comment-content .comment-text -->
+							<?php comment_text( $comment->comment_ID ); ?>
+            </div>
+            <!-- .comment-content .comment-text -->
 
-			<?php //echo do_shortcode( '[comment-reply-link]' ); ?>
+					<?php //echo do_shortcode( '[comment-reply-link]' ); ?>
 
-			<?php do_atomic( 'close_comment' ); // spine_close_comment ?>
-
-    </div><!-- .comment-wrap -->
-
+					<?php do_atomic( 'close_comment' ); // spine_close_comment ?>
+        </div>
+        <!-- .ten columns -->
+    </div>
+    <!-- .comment-wrap -->
+    <hr>
 	<?php do_atomic( 'after_comment' ); // spine_after_comment ?>
 
 <?php /* No closing </li> is needed.  WordPress will know where to add it. */ ?>

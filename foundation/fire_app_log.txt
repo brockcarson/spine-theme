@@ -35,3 +35,459 @@
 2012-12-10 08:26:28 overwrite stylesheets/app.css 
 2012-12-10 08:26:47 overwrite stylesheets/app.css 
 2012-12-10 08:27:28 overwrite stylesheets/app.css 
+2013-01-05 19:25:04 identical stylesheets/app.css 
+2013-01-05 19:25:22 overwrite stylesheets/app.css 
+2013-01-05 19:25:58     error sass/app.scss (Line 112 of sass/_defaults.scss: Invalid CSS after "}": expected "}", was "")
+2013-01-05 19:25:58 overwrite stylesheets/app.css 
+2013-01-05 19:26:11 overwrite stylesheets/app.css 
+2013-01-05 20:10:13 overwrite stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 overwrite stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:43 identical stylesheets/app.css 
+2013-01-06 14:33:43     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 
+2013-01-06 14:33:44     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 
+2013-01-06 14:33:44     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 
+2013-01-06 14:33:44     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 
+2013-01-06 14:33:44     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 
+2013-01-06 14:33:44     error sass/app.scss (Line 1 of sass/_settings.scss: File to import not found or unreadable: foundation/common/ratios.
+Load paths:
+  E:/paul_docs/Websites/demos.dev/wp-content/themes/spine/foundation/sass
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  C:/fire.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/compass-h5bp/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/bootstrap-sass-2.2.1.0/vendor/assets/stylesheets
+  C:/fire.app/lib/ruby/compass_extensions/susy-1.0.4/sass
+  C:/fire.app/lib/ruby/common/sassy-math-1.2/stylesheets
+  C:/fire.app/lib/ruby/common/modular-scale-1.0.2/stylesheets
+  C:/Users/paul/.compass/extensions/foundation-master/scss
+  Compass::SpriteImporter)
+2013-01-06 14:33:44 identical stylesheets/app.css 

@@ -15,7 +15,12 @@
  */
 ?>
 
-<?php get_sidebar(); ?>
+<?php
+/** No sidebar on full width content */
+$layout = get_post_layout( get_the_ID() );
+if('1c' != $layout)
+	get_sidebar();
+?>
 </div>
 
 <!-- End Main Content and Sidebar -->
