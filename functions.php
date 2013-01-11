@@ -265,8 +265,12 @@ function pdw_spine_fetch_content_grid_classes(){
 
 	/** Set the grid column span */
 	$span_cols = apply_filters('spine_content_span_cols', 'nine columns');
+	/** Search and 404 pages get default layout */
+	if(  is_404() ||  is_search() ){
+		$content_classes = $span_cols;
+	} else {
  /** Layout logic  */
-  $layout = get_post_layout( get_the_ID() );
+  $layout = get_post_layout(  get_the_ID() );
 switch($layout){
 	case 'default' :
 		$content_classes = $span_cols;
@@ -283,14 +287,21 @@ switch($layout){
 	default:
 		$content_classes = $span_cols;
 		break;
-}
+} // end switch
+	} // end if
 return $content_classes;
 }
 
 function pdw_spine_fetch_sidebar_grid_classes(){
+
 	$span_cols = apply_filters('spine_sidebar_span_cols', 'three columns');
+
+	/** Search and 404 pages get default layout */
+	if(  is_404() ||  is_search() ){
+		$sidebar_classes = $span_cols;
+	} else {
 	/** Layout logic  */
-	$layout = get_post_layout( get_the_ID() );
+	$layout = get_post_layout(  get_the_ID() );
 	switch($layout){
 		case 'default' :
 			$sidebar_classes = $span_cols;
@@ -307,6 +318,7 @@ function pdw_spine_fetch_sidebar_grid_classes(){
 		default:
 			$sidebar_classes = $span_cols;
 			break;
-	}
+	} //end switch
+	} // end if
 return $sidebar_classes;
 }

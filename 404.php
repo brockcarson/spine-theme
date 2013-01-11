@@ -17,10 +17,10 @@
 @header( 'HTTP/1.1 404 Not found', true, 404 );
 
 get_header(); // Loads the header.php template. ?>
-
+<?php $content_grid_classes = pdw_spine_fetch_content_grid_classes(); ?>
 <?php do_atomic( 'before_content' ); // spine_before_content ?>
 
-<div class="nine columns" role="content">
+<div class="<?php echo $content_grid_classes; ?>" role="content">
 
 	<?php do_atomic( 'open_content' ); // spine_open_content ?>
 

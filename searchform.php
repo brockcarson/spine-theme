@@ -18,11 +18,11 @@
 
 				<form method="get" class="search-form" action="<?php echo trailingslashit( home_url() ); ?>">
 						<div class="row collapse">
-				<div class="nine mobile-three columns">
+				<div class="eight mobile-three columns">
 					<input class="search-text" type="text" name="s" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else esc_attr_e( 'Enter search terms...', 'spine' ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
 					</div>
-					<div class="three mobile-one columns">
-						<a class="button expand postfix"><?php esc_attr_e( 'Search', 'spine' ); ?></a>
+					<div class="four mobile-one columns">
+              <input type="submit" href="#" class="postfix small button expand" value="<?php _e('Search', 'pdw-spine'); ?>">
 				</div>
             </div>
 				</form><!-- .search-form -->
