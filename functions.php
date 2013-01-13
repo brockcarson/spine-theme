@@ -19,14 +19,14 @@ require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php'
 new Hybrid();
 
 /** Theme setup */
-function pdw_spi_theme_setup(){
+function pdw_spine_theme_setup() {
 
 	/** Theme constants */
 	define ( 'PDW_SPINE_JS_URL', trailingslashit( get_stylesheet_directory_uri() . '/foundation/javascripts/foundation' ) );
 
 	define ( 'PDW_SPINE_INC_DIR', trailingslashit( get_stylesheet_directory() . '/includes' ) );
 
-	define ( 'PDW_SPINE_DIR', dirname(__FILE__) );
+	define ( 'PDW_SPINE_DIR', dirname( __FILE__ ) );
 
 	define( 'PDW_SPINE_VERSION', '0.1' );
 
@@ -39,9 +39,6 @@ function pdw_spi_theme_setup(){
 	/** Use Foundation makrup for galleries */
 	include_once 'includes/gallery-shortcode.php';
 
-	/** Include theme customizer options */
-	include_once 'includes/spine-customizer.php';
-	add_action('customize_register','pdw_spine_customize_register');
 
 	/** Load main stylesheet */
 	add_action( 'wp_enqueue_scripts', 'pdw_spine_load_styles' );
@@ -58,7 +55,18 @@ function pdw_spi_theme_setup(){
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary' ) );
 	add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
+
+	/** Add theme settings */
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
+
+	/** Include Spine theme settings */
+	if ( is_admin() )
+		require_once trailingslashit( get_template_directory() ) . 'includes/functions-admin.php';
+
+	/** Include theme customizer options */
+	include_once 'includes/spine-customizer.php';
+	add_action( 'customize_register', 'pdw_spine_customize_register' );
+
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
 	//add_theme_support( 'hybrid-core-seo' );
@@ -75,13 +83,13 @@ function pdw_spi_theme_setup(){
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
 
-	add_theme_support('theme-layouts', array('2c-l', '2c-r', '1c'));
+	add_theme_support( 'theme-layouts', array( '2c-l', '2c-r', '1c' ) );
 
 	/* Add support for WordPress custom background. */
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-image' => trailingslashit( get_template_directory_uri() ) . 'backgrounds/satinweave.png',
+			'default-image'    => trailingslashit( get_template_directory_uri() ) . 'backgrounds/satinweave.png',
 			'wp-head-callback' => 'pdw_spine_custom_background_callback'
 		)
 	);
@@ -90,12 +98,12 @@ function pdw_spi_theme_setup(){
 	add_theme_support(
 		'custom-header',
 		array(
-			'wp-head-callback' => '__return_false',
+			'wp-head-callback'    => '__return_false',
 			'admin-head-callback' => '__return_false',
-			'header-text' => false,
-			'default-image' => 'remove-header',
-			'width' => 970,
-			'height' => 250
+			'header-text'         => false,
+			'default-image'       => 'remove-header',
+			'width'               => 970,
+			'height'              => 250
 		)
 	);
 
@@ -107,20 +115,21 @@ function pdw_spi_theme_setup(){
 	//add_filter( 'wp_nav_menu_objects',  'pdw_spine_add_parent_class'  );
 	add_filter( 'wp_nav_menu_objects', 'pdw_spine_add_active_class' );
 
-	add_filter('loop_pagination_args','pdw_spine_foundation_pagination');
+	add_filter( 'loop_pagination_args', 'pdw_spine_foundation_pagination' );
 
 	/* Register Spine widgets. */
 	add_action( 'widgets_init', 'pdw_spine_register_widgets' );
 
 	/**  custom editor styles */
 	if ( is_admin() ) {
-		include('tinymce-kit/tinymce-kit.php');
+		include( 'tinymce-kit/tinymce-kit.php' );
 	} // end if
 
 	//add_filter('post_thumbnail_html', 'pdw_spine_add_thumbnail_class',10, 3 );
-	add_filter('get_the_image', 'pdw_spine_add_featured_img_class',10, 1 );
+	add_filter( 'get_the_image', 'pdw_spine_add_featured_img_class', 10, 1 );
 }
-add_action( 'after_setup_theme', 'pdw_spi_theme_setup' );
+
+add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
 
 
 /**
@@ -169,7 +178,7 @@ function pdw_spine_load_scripts() {
  * background image, we'll just use the WordPress custom background callback.
  *
  * @since 0.1.0
- * @link http://core.trac.wordpress.org/ticket/16919
+ * @link  http://core.trac.wordpress.org/ticket/16919
  */
 function pdw_spine_custom_background_callback() {
 
@@ -177,7 +186,7 @@ function pdw_spine_custom_background_callback() {
 	$image = get_background_image();
 
 	/* If there's an image, just call the normal WordPress callback. We won't do anything here. */
-	if ( !empty( $image ) ) {
+	if ( ! empty( $image ) ) {
 		_custom_background_cb();
 		return;
 	}
@@ -228,7 +237,7 @@ function pdw_spine_add_active_class( $items ) {
 }
 
 /** Customize loop pagination extension */
-function pdw_spine_foundation_pagination($args){
+function pdw_spine_foundation_pagination( $args ) {
 	$args['before'] = '<div class="loop-pagination">';
 
 	$args['type'] = 'list';
@@ -236,7 +245,7 @@ function pdw_spine_foundation_pagination($args){
 	return $args;
 }
 
-function pdw_spine_register_widgets(){
+function pdw_spine_register_widgets() {
 	/** Customize Nav Menu Widget */
 	include_once  'includes/widget-nav-menu.php';
 
@@ -244,81 +253,91 @@ function pdw_spine_register_widgets(){
 	register_widget( 'Spine_Widget_Nav_Menu' );
 }
 
-function pdw_spine_add_featured_img_class($img_html){
+function pdw_spine_add_featured_img_class( $img_html ) {
 	/** Only do this is there's an image */
-	if(!empty($img_html))
+	if ( ! empty( $img_html ) )
 		$img_html = '<a class="th" href="' . get_permalink( get_the_ID() ) . '" title="' . esc_attr( get_post_field( 'post_title', get_the_ID() ) ) . '">' . $img_html . '</a>';
 
 	return $img_html;
 }
 
-function pdw_spine_fetch_bg_images(){
+function pdw_spine_fetch_bg_images() {
 	$directory = PDW_SPINE_DIR . '/backgrounds/';
 	//get all image files with a .jpg extension.
-	$images = glob($directory . "*.jpg");
+	$images = glob( $directory . "*.jpg" );
 
 	return $images;
 }
 
 
-function pdw_spine_fetch_content_grid_classes(){
+function pdw_spine_fetch_content_grid_classes() {
 
 	/** Set the grid column span */
-	$span_cols = apply_filters('spine_content_span_cols', 'nine columns');
+	$span_cols = apply_filters( 'spine_content_span_cols', 'nine columns' );
 	/** Search and 404 pages get default layout */
-	if(  is_404() ||  is_search() ){
+	if ( is_404() || is_search() ) {
 		$content_classes = $span_cols;
 	} else {
- /** Layout logic  */
-  $layout = get_post_layout(  get_the_ID() );
-switch($layout){
-	case 'default' :
-		$content_classes = $span_cols;
-		break;
-	case '1c' :
-		$content_classes = "twelve columns";
-		break;
-	case '2c-r':
-		$content_classes = $span_cols;
-		break;
-	case '2c-l':
-		$content_classes = $span_cols . " push-three";
-		break;
-	default:
-		$content_classes = $span_cols;
-		break;
-} // end switch
+		/** Layout logic  */
+		$layout = get_post_layout( get_the_ID() );
+		switch ( $layout ) {
+			case 'default' :
+				$content_classes = $span_cols;
+				break;
+			case '1c' :
+				$content_classes = "twelve columns";
+				break;
+			case '2c-r':
+				$content_classes = $span_cols;
+				break;
+			case '2c-l':
+				$content_classes = $span_cols . " push-three";
+				break;
+			default:
+				$content_classes = $span_cols;
+				break;
+		} // end switch
 	} // end if
-return $content_classes;
+	return $content_classes;
 }
 
-function pdw_spine_fetch_sidebar_grid_classes(){
+function pdw_spine_fetch_sidebar_grid_classes() {
 
-	$span_cols = apply_filters('spine_sidebar_span_cols', 'three columns');
+	$span_cols = apply_filters( 'spine_sidebar_span_cols', 'three columns' );
 
 	/** Search and 404 pages get default layout */
-	if(  is_404() ||  is_search() ){
+	if ( is_404() || is_search() ) {
 		$sidebar_classes = $span_cols;
 	} else {
-	/** Layout logic  */
-	$layout = get_post_layout(  get_the_ID() );
-	switch($layout){
-		case 'default' :
-			$sidebar_classes = $span_cols;
-			break;
-		case '1c' :
-			$sidebar_classes = "twelve columns";
-			break;
-		case '2c-r':
-			$sidebar_classes = $span_cols;
-			break;
-		case '2c-l':
-			$sidebar_classes = $span_cols . " pull-nine";
-			break;
-		default:
-			$sidebar_classes = $span_cols;
-			break;
-	} //end switch
+		/** Layout logic  */
+		$layout = get_post_layout( get_the_ID() );
+		switch ( $layout ) {
+			case 'default' :
+				$sidebar_classes = $span_cols;
+				break;
+			case '1c' :
+				$sidebar_classes = "twelve columns";
+				break;
+			case '2c-r':
+				$sidebar_classes = $span_cols;
+				break;
+			case '2c-l':
+				$sidebar_classes = $span_cols . " pull-nine";
+				break;
+			default:
+				$sidebar_classes = $span_cols;
+				break;
+		} //end switch
 	} // end if
-return $sidebar_classes;
+	return $sidebar_classes;
 }
+
+function pdw_spine_class_names($classes) {
+	// add 'class-name' to the $classes array
+	$classes[] = hybrid_get_setting('color_scheme_select');
+	// return the $classes array
+	return $classes;
+}
+
+//Now add test class to the filter
+add_filter('body_class','pdw_spine_class_names');

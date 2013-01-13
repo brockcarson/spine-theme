@@ -13,23 +13,58 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-function pdw_spine_customize_register($wp_customize) {
-	/** Add a new customizer section under the defaults */
-	$wp_customize->add_section(
-		'spine_color_scheme',
-		array(
-			'title'    => __( 'color scheme', 'pdw-spine' ),
-			'priority' => 35,
-		)
-	);
+function pdw_spine_customize_register( $wp_customize ) {
 
-	/** Declare a new setting */
-	$wp_customize->add_setting(
-		'spine_theme_options[color_scheme]',
+	/* Add the  section. */
+	$wp_customize->add_section(
+		'color_scheme',
 		array(
-			'default' => 'blue',
-			'type' => 'option',
+			'title'      => esc_html__( 'Color Scheme', 'pdw-spine' ),
+			'priority'   => 35,
 			'capability' => 'edit_theme_options'
 		)
 	);
+
+	/* Add the  setting. */
+	$wp_customize->add_setting(
+		'spine_theme_settings[color_scheme_select]',
+		array(
+			'default'           => 'default',
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_html_class',
+			'transport'         => 'postMessage'
+		)
+	);
+
+	$schemes = pdw_spine_fetch_default_color_schemes();
+	/* Add the control. */
+	$wp_customize->add_control(
+		'theme-color-scheme',
+		array(
+			'label'    => esc_html__( 'Color Scheme', 'pdw-spine' ),
+			'section'  => 'color_scheme',
+			'settings' => 'spine_theme_settings[color_scheme_select]',
+			'type'     => 'radio',
+			'choices'  => $schemes
+		)
+	);
+
+	/* If viewing the customize preview screen, add a script to show a live preview. */
+	//if ( $wp_customize->is_preview() && ! is_admin() )
+	//	add_action( 'wp_footer', 'theme_scheme_customize_preview_script', 21 );
+
+}
+
+function theme_scheme_customize_preview_script() { ?>
+    <script type="text/javascript">
+    ( function( $ ){
+        wp.customize('setting_name',function( value ) {
+            value.bind(function(to) {
+                $('.posttitle').css('color', to ? '#' + to : '' );
+            });
+        });
+    } )( jQuery )
+</script>
+    <?php
 }
