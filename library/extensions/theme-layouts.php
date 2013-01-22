@@ -2,24 +2,24 @@
 /**
  * Theme Layouts - A WordPress script for creating dynamic layouts.
  *
- * Theme Layouts was created to allow theme developers to easily style themes with dynamic layout
- * structures.  It gives users the ability to control how each post (or any post type) is displayed on the
- * front end of the site.  The layout can also be filtered for any page of a WordPress site.
+ * Theme Layouts was created to allow theme developers to easily style themes with dynamic layout 
+ * structures.  It gives users the ability to control how each post (or any post type) is displayed on the 
+ * front end of the site.  The layout can also be filtered for any page of a WordPress site.  
  *
- * The script will filter the WordPress body_class to provide a layout class for the given page.  Themes
- * must support this hook or its accompanying body_class() function for the Theme Layouts script to work.
- * Themes must also handle the CSS based on the layout class.  This script merely provides the logic.  The
+ * The script will filter the WordPress body_class to provide a layout class for the given page.  Themes 
+ * must support this hook or its accompanying body_class() function for the Theme Layouts script to work. 
+ * Themes must also handle the CSS based on the layout class.  This script merely provides the logic.  The 
  * design should be handled on a theme-by-theme basis.
  *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
- * General Public License as published by the Free Software Foundation; either version 2 of the License,
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
+ * General Public License as published by the Free Software Foundation; either version 2 of the License, 
  * or (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package   ThemeLayouts
- * @version   0.5.0 - Alpha
+ * @version   0.5.0
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2010 - 2012, Justin Tadlock
  * @link      http://justintadlock.com
@@ -46,7 +46,7 @@ add_filter( 'theme_mod_theme_layout', 'theme_layouts_filter_layout' );
 add_filter( 'body_class', 'theme_layouts_body_class' );
 
 /**
- * Registers the theme layouts meta key ('Layout') for specific object types and provides a function to
+ * Registers the theme layouts meta key ('Layout') for specific object types and provides a function to 
  * sanitize the metadata on update.
  *
  * @since 0.4.0
@@ -58,8 +58,8 @@ function theme_layouts_register_meta() {
 }
 
 /**
- * Callback function for sanitizing meta when add_metadata() or update_metadata() is called by WordPress.
- * If a developer wants to set up a custom method for sanitizing the data, they should use the
+ * Callback function for sanitizing meta when add_metadata() or update_metadata() is called by WordPress. 
+ * If a developer wants to set up a custom method for sanitizing the data, they should use the 
  * "sanitize_{$meta_type}_meta_{$meta_key}" filter hook to do so.
  *
  * @since 0.4.0
@@ -73,7 +73,7 @@ function theme_layouts_sanitize_meta( $meta_value, $meta_key, $meta_type ) {
 }
 
 /**
- * Adds post type support to all 'public' post types.  This allows themes to remove support for the
+ * Adds post type support to all 'public' post types.  This allows themes to remove support for the 
  * 'theme-layouts' feature with remove_post_type_support().
  *
  * @since 0.4.0
@@ -117,7 +117,7 @@ function theme_layouts_get_layouts() {
 }
 
 /**
- * Returns an array of arguments for setting up the theme layouts script.  The defaults are merged
+ * Returns an array of arguments for setting up the theme layouts script.  The defaults are merged 
  * with the theme-supported arguments.
  *
  * @since 0.5.0
@@ -134,7 +134,7 @@ function theme_layouts_get_args() {
 }
 
 /**
- * Filters the 'theme_mods_theme_layout' hook to alter the layout based on post and user metadata.
+ * Filters the 'theme_mods_theme_layout' hook to alter the layout based on post and user metadata.  
  * Theme authors should also use this hook to filter the layout if need be.
  *
  * @since 0.5.0
@@ -160,7 +160,7 @@ function theme_layouts_filter_layout( $theme_layout ) {
 }
 
 /**
- * Gets the layout for the current post based off the 'Layout' custom field key if viewing a singular post
+ * Gets the layout for the current post based off the 'Layout' custom field key if viewing a singular post 
  * entry.  All other pages are given a default layout of 'layout-default'.
  *
  * @since 0.2.0
@@ -305,8 +305,8 @@ function has_user_layout( $layout, $user_id = '' ) {
 }
 
 /**
- * Adds the post layout class to the WordPress body class in the form of "layout-$layout".  This allows
- * theme developers to design their theme layouts based on the layout class.  If designing a theme with
+ * Adds the post layout class to the WordPress body class in the form of "layout-$layout".  This allows 
+ * theme developers to design their theme layouts based on the layout class.  If designing a theme with 
  * this extension, the theme should make sure to handle all possible layout classes.
  *
  * @since 0.2.0
@@ -323,8 +323,8 @@ function theme_layouts_body_class( $classes ) {
 }
 
 /**
- * Creates default text strings based on the default post layouts.  Theme developers that add custom
- * layouts should filter 'post_layouts_strings' to add strings to match the custom layouts, but it's not
+ * Creates default text strings based on the default post layouts.  Theme developers that add custom 
+ * layouts should filter 'post_layouts_strings' to add strings to match the custom layouts, but it's not 
  * required.  The layout name will be used if no text string is found.
  *
  * @since 0.2.0
@@ -364,7 +364,7 @@ function theme_layouts_get_string( $layout ) {
 }
 
 /**
- * Post layouts admin setup.  Registers the post layouts meta box for the post editing screen.  Adds the
+ * Post layouts admin setup.  Registers the post layouts meta box for the post editing screen.  Adds the 
  * metadata save function to the 'save_post' hook.
  *
  * @since 0.2.0
@@ -388,7 +388,7 @@ function theme_layouts_admin_setup() {
 }
 
 /**
- * Hooks into the 'add_meta_boxes' hook to add the theme layouts meta box and the 'save_post' hook
+ * Hooks into the 'add_meta_boxes' hook to add the theme layouts meta box and the 'save_post' hook 
  * to save the metadata.
  *
  * @since 0.4.0
@@ -401,10 +401,12 @@ function theme_layouts_load_meta_boxes() {
 
 	/* Saves the post format on the post editing page. */
 	add_action( 'save_post', 'theme_layouts_save_post', 10, 2 );
+	add_action( 'add_attachment', 'theme_layouts_save_post' );
+	add_action( 'edit_attachment', 'theme_layouts_save_post' );
 }
 
 /**
- * Adds the theme layouts meta box if the post type supports 'theme-layouts' and the current user has
+ * Adds the theme layouts meta box if the post type supports 'theme-layouts' and the current user has 
  * permission to edit post meta.
  *
  * @since 0.4.0
@@ -420,7 +422,7 @@ function theme_layouts_add_meta_boxes( $post_type, $post ) {
 }
 
 /**
- * Displays a meta box of radio selectors on the post editing screen, which allows theme users to select
+ * Displays a meta box of radio selectors on the post editing screen, which allows theme users to select 
  * the layout they wish to use for the specific post.
  *
  * @since 0.2.0
@@ -438,22 +440,22 @@ function theme_layouts_post_meta_box( $post, $box ) {
 	/* Get the current post's layout. */
 	$post_layout = get_post_layout( $post->ID ); ?>
 
-<div class="post-layout">
+	<div class="post-layout">
 
-	<?php wp_nonce_field( basename( __FILE__ ), 'theme-layouts-nonce' ); ?>
+		<?php wp_nonce_field( basename( __FILE__ ), 'theme-layouts-nonce' ); ?>
 
-    <p><?php _e( 'Layout is a theme-specific structure for the single view of the post.', 'theme-layouts' ); ?></p>
+		<p><?php _e( 'Layout is a theme-specific structure for the single view of the post.', 'theme-layouts' ); ?></p>
 
-    <div class="post-layout-wrap">
-        <ul>
-            <li><input type="radio" name="post-layout" id="post-layout-default" value="default" <?php checked( $post_layout, 'default' );?> /> <label for="post-layout-default"><?php echo esc_html( theme_layouts_get_string( 'default' ) ); ?></label></li>
+		<div class="post-layout-wrap">
+			<ul>
+				<li><input type="radio" name="post-layout" id="post-layout-default" value="default" <?php checked( $post_layout, 'default' );?> /> <label for="post-layout-default"><?php echo esc_html( theme_layouts_get_string( 'default' ) ); ?></label></li>
 
-					<?php foreach ( $post_layouts as $layout ) { ?>
-            <li><input type="radio" name="post-layout" id="post-layout-<?php echo esc_attr( $layout ); ?>" value="<?php echo esc_attr( $layout ); ?>" <?php checked( $post_layout, $layout ); ?> /> <label for="post-layout-<?php echo esc_attr( $layout ); ?>"><?php echo esc_html( theme_layouts_get_string( $layout ) ); ?></label></li>
-					<?php } ?>
-        </ul>
-    </div>
-</div><?php
+				<?php foreach ( $post_layouts as $layout ) { ?>
+					<li><input type="radio" name="post-layout" id="post-layout-<?php echo esc_attr( $layout ); ?>" value="<?php echo esc_attr( $layout ); ?>" <?php checked( $post_layout, $layout ); ?> /> <label for="post-layout-<?php echo esc_attr( $layout ); ?>"><?php echo esc_html( theme_layouts_get_string( $layout ) ); ?></label></li>
+				<?php } ?>
+			</ul>
+		</div>
+	</div><?php
 }
 
 /**
@@ -465,7 +467,11 @@ function theme_layouts_post_meta_box( $post, $box ) {
  * @param object $post The post object currently being saved.
  * @return void|int
  */
-function theme_layouts_save_post( $post_id, $post ) {
+function theme_layouts_save_post( $post_id, $post = '' ) {
+
+	/* Fix for attachment save issue in WordPress 3.5. @link http://core.trac.wordpress.org/ticket/21963 */
+	if ( !is_object( $post ) )
+		$post = get_post();
 
 	/* Verify the nonce for the post formats meta box. */
 	if ( !isset( $_POST['theme-layouts-nonce'] ) || !wp_verify_nonce( $_POST['theme-layouts-nonce'], basename( __FILE__ ) ) )
@@ -522,9 +528,11 @@ function theme_layouts_attachment_fields_to_edit( $fields, $post ) {
 
 	/* Add the attachment layout field to the $fields array. */
 	$fields['theme-layouts-post-layout'] = array(
-		'label' => __( 'Layout', 'theme-layouts' ),
-		'input' => 'html',
-		'html' => $select
+		'label'         => __( 'Layout', 'theme-layouts' ),
+		'input'         => 'html',
+		'html'          => $select,
+		'show_in_edit'  => false,
+		'show_in_modal' => true
 	);
 
 	/* Return the $fields array back to WordPress. */
@@ -653,8 +661,8 @@ function theme_layouts_customize_register( $wp_customize ) {
 }
 
 /**
- * JavaScript for handling the live preview editing of the theme layout in the theme customizer.  The
- * script uses regex to remove all potential "layout-xyz" classes and replaces it with the user-selected
+ * JavaScript for handling the live preview editing of the theme layout in the theme customizer.  The 
+ * script uses regex to remove all potential "layout-xyz" classes and replaces it with the user-selected 
  * layout.
  *
  * @since 0.1.0
@@ -667,20 +675,20 @@ function theme_layouts_customize_register( $wp_customize ) {
  */
 function theme_layouts_customize_preview_script() { ?>
 
-<script type="text/javascript">
-    wp.customize(
-            'theme_layout',
-            function( value ) {
-                value.bind(
-                        function( to ) {
-                            var classes = jQuery( 'body' ).attr( 'class' ).replace( /layout-[a-zA-Z0-9_-]*/g, '' );
-                            jQuery( 'body' ).attr( 'class', classes ).addClass( 'layout-' + to );
-                        }
-                );
-            }
-    );
-</script>
-<?php
+	<script type="text/javascript">
+	wp.customize(
+		'theme_layout',
+		function( value ) {
+			value.bind( 
+				function( to ) {
+					var classes = jQuery( 'body' ).attr( 'class' ).replace( /layout-[a-zA-Z0-9_-]*/g, '' );
+					jQuery( 'body' ).attr( 'class', classes ).addClass( 'layout-' + to );
+				} 
+			);
+		}
+	);
+	</script>
+	<?php
 }
 
 /**

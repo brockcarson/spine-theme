@@ -15,7 +15,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package   BreadcrumbTrail
- * @version   0.5.3 - Alpha
+ * @version   0.5.3
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2008 - 2012, Justin Tadlock
  * @link      http://themehybrid.com/plugins/breadcrumb-trail
@@ -45,6 +45,7 @@ function breadcrumb_trail( $args = array() ) {
 		'after'      => false,
 		'front_page' => true,
 		'show_home'  => __( 'Home', 'breadcrumb-trail' ),
+		'network'    => false,
 		'echo'       => true
 	);
 
@@ -121,8 +122,15 @@ function breadcrumb_trail_get_items( $args = array() ) {
 	$path = '';
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
-	if ( !is_front_page() && $args['show_home'] )
-		$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
+	if ( !is_front_page() && $args['show_home'] ) {
+
+		if ( is_multisite() && true === $args['network'] ) {
+			$trail[] = '<a href="' . network_home_url() . '">' . $args['show_home'] . '</a>';
+			$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . get_bloginfo( 'name' ) . '</a>';
+		} else {
+			$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
+		}
+	}
 
 	/* If bbPress is installed and we're on a bbPress page. */
 	if ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
@@ -132,11 +140,25 @@ function breadcrumb_trail_get_items( $args = array() ) {
 	/* If viewing the front page of the site. */
 	elseif ( is_front_page() ) {
 
-		if ( !is_paged() && $args['show_home'] && $args['front_page'] )
-			$trail[] = "{$args['show_home']}";
+		if ( !is_paged() && $args['show_home'] && $args['front_page'] ) {
 
-		elseif ( is_paged() && $args['show_home'] && $args['front_page'] )
-			$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
+			if ( is_multisite() && true === $args['network'] ) {
+				$trail[] = '<a href="' . network_home_url() . '">' . $args['show_home'] . '</a>';
+				$trail[] = get_bloginfo( 'name' );
+			} else {
+				$trail[] = $args['show_home'];
+			}
+		}
+
+		elseif ( is_paged() && $args['show_home'] && $args['front_page'] ) {
+
+			if ( is_multisite() && true === $args['network'] ) {
+				$trail[] = '<a href="' . network_home_url() . '">' . $args['show_home'] . '</a>';
+				$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . get_bloginfo( 'name' ) . '</a>';
+			} else {
+				$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
+			}
+		}
 	}
 
 	/* If viewing the "home"/posts page. */
@@ -310,14 +332,27 @@ function breadcrumb_trail_get_items( $args = array() ) {
 				/* Get public post types that match the rewrite slug. */
 				$post_types = get_post_types( array( 'public' => true, 'has_archive' => $taxonomy->rewrite['slug'] ), 'objects' );
 
-				/* If any post types are found, get the first one. */
+				/**
+				 * If any post types are found, loop through them to find one that matches.
+				 * The reason for this is because WP doesn't match the 'has_archive' string 
+				 * exactly when calling get_post_types(). I'm assuming it just matches 'true'.
+				 */
 				if ( !empty( $post_types ) ) {
-					$post_type_object = array_shift( $post_types );
 
-					/* Add support for a non-standard label of 'archive_title' (special use case). */
-					$label = !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+					foreach ( $post_types as $post_type_object ) {
 
-					$trail[] = '<a href="' . get_post_type_archive_link( $post_type_object->name ) . '" title="' . esc_attr( $label ) . '">' . $label . '</a>';
+						if ( $taxonomy->rewrite['slug'] === $post_type_object->has_archive ) {
+
+							/* Add support for a non-standard label of 'archive_title' (special use case). */
+							$label = !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+
+							/* Add the post type archive link to the trail. */
+							$trail[] = '<a href="' . get_post_type_archive_link( $post_type_object->name ) . '" title="' . esc_attr( $label ) . '">' . $label . '</a>';
+
+							/* Break out of the loop. */
+							break;
+						}
+					}
 				}
 			}
 

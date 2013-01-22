@@ -17,42 +17,47 @@
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
 
-    <title><?php hybrid_document_title(); ?></title>
+	<title><?php hybrid_document_title(); ?></title>
 
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <script src="<?php echo get_template_directory_uri() . '/foundation/javascripts/foundation'; ?>/modernizr.foundation.js"></script>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<script src="<?php echo trailingslashit( get_template_directory_uri())  . trailingslashit('js'); ?>modernizr.foundation.js"></script>
 	<?php wp_head(); ?>
 </head>
 <body class="<?php hybrid_body_class(); ?>">
 
 <?php get_template_part( 'menu', 'secondary' ); // Loads the menu-primary.php template. ?>
 <div class="row">
-    <div class="twelve columns">
+	<div class="twelve columns">
 
-			<div class="row">
-					<div class="seven columns">
-              <h1 id="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-					</div>
-					<div class="five columns">
-              <h2 id="site-description"><small><?php bloginfo( 'description' ); ?></small></h2>
-					</div>
+		<div class="row">
+			<div class="seven columns">
+				<h1 id="site-title">
+					<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+				</h1>
 			</div>
+			<div class="five columns">
+				<h2 id="site-description">
+					<small><?php bloginfo( 'description' ); ?></small>
+				</h2>
+			</div>
+		</div>
 
-			<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 
-			<?php if ( get_header_image() ) echo '<img class="header-image" src="' . esc_url( get_header_image() ) . '" alt="" />'; ?>
+		<?php if ( get_header_image() ) echo '<img class="header-image" src="' . esc_url( get_header_image() ) . '" alt="" />'; ?>
 
-        <hr />
-    </div>
+		<hr />
+	</div>
 </div>
 
 <!-- End Nav -->
