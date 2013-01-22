@@ -14,3 +14,8 @@ Initial Release
 (01/10/2013)
 [!] Fixed bug with layout logic
 [!] Fixed bug with search form
+
+(22/01/2013)
+[!] Fixed bug in layout logic
+[!] Removed foundation Sass from theme
+[+] Added color schemes to theme options (red, greed)
