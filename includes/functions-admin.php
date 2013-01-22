@@ -34,7 +34,7 @@ function pdw_spine_settings_meta_boxes(){
 	/** Add a custom meta box */
 	add_meta_box(
 		'pdw-spine-meta-box',
-		__('Spine Settings', 'pdw-spine'),
+		__('Spine Settings', 'spine'),
 		'pdw_spine_meta_box',
 		'appearance_page_theme-settings',
 		'normal',
@@ -53,13 +53,13 @@ $schemes = pdw_spine_fetch_default_color_schemes();
 				<!-- Dropdown select for Color Scheme -->
 				<tr>
 						<th>
-								<label for="<?php echo hybrid_settings_field_id('color_scheme_select'); ?>"><?php _e('Color Scheme','pdw-spine'); ?></label>
+								<label for="<?php echo hybrid_settings_field_id('color_scheme_select'); ?>"><?php _e('Color Scheme','spine'); ?></label>
 						</th>
 						<td>
 								<p><select id="<?php echo esc_attr(hybrid_settings_field_id( 'color_scheme_select' )); ?>" name="<?php echo esc_attr(hybrid_settings_field_name( 'color_scheme_select' )); ?>">
 										<?php
 									foreach( $schemes as $key => $value){ ?>
-                      <option value="<?php echo $key; ?>" <?php selected( hybrid_get_setting('color_scheme_select'), "{$key}" ); ?>><?php esc_html_e($value); ?></option>
+                      <option value="<?php echo $key; ?>" <?php selected( hybrid_get_setting('color_scheme_select'), "{$key}" ); ?>><?php esc_html_e($value,'spine'); ?></option>
 								<?php } ?>
 
 								</select></p>
@@ -77,10 +77,10 @@ function pdw_spine_validate_settings($input){
 
 function pdw_spine_fetch_default_color_schemes(){
 	$defaults = array(
-		'default' => __('Default', 'pdw-spine'),
-		'blue' => __('Blue', 'pdw-spine'),
-		'red' => __('Red', 'pdw-spine'),
-		'green' => __('Green', 'pdw-spine'),
+		'default' => __('Default', 'spine'),
+		'blue' => __('Blue', 'spine'),
+		'red' => __('Red', 'spine'),
+		'green' => __('Green', 'spine'),
 	);
 
 	return apply_filters('pdw_spine_default_color_schemes', $defaults);

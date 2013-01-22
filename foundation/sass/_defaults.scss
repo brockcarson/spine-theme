@@ -104,6 +104,7 @@ img.size-full {
 
 [rel="tag"]{
 	@extend .label;
+	display: inline-block; margin-bottom: 2px;
 }
 
 .comment-list, .comment-list .children {
@@ -112,4 +113,12 @@ img.size-full {
 
 input[type="submit"]{
 	@extend .button;
+}
+
+.comment-content table, .entry-content table {
+	@extend .twelve;
+}
+td.label{
+	background: transparent;
+	line-height: inherit;
 }

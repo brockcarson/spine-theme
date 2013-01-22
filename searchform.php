@@ -22,7 +22,7 @@
 					<input class="search-text" type="text" name="s" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else esc_attr_e( 'Enter search terms...', 'spine' ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
 					</div>
 					<div class="four mobile-one columns">
-              <input type="submit" href="#" class="postfix small button expand" value="<?php _e('Search', 'pdw-spine'); ?>">
+              <input type="submit" href="#" class="postfix small button expand" value="<?php _e('Search', 'spine'); ?>">
 				</div>
             </div>
 				</form><!-- .search-form -->

@@ -64,8 +64,8 @@ function pdw_spine_theme_setup() {
 		require_once trailingslashit( get_template_directory() ) . 'includes/functions-admin.php';
 
 	/** Include theme customizer options */
-	include_once 'includes/spine-customizer.php';
-	add_action( 'customize_register', 'pdw_spine_customize_register' );
+	//include_once 'includes/spine-customizer.php';
+	//add_action( 'customize_register', 'pdw_spine_customize_register' );
 
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
@@ -139,6 +139,16 @@ function pdw_spine_load_styles() {
 
 	/** This loads the main theme style.css */
 	wp_enqueue_style( 'main', get_stylesheet_uri() );
+
+	switch(hybrid_get_setting('color_scheme_select')){
+		case 'default':
+			break;
+		case 'green':
+			wp_enqueue_style( 'green-scheme', trailingslashit(get_template_directory_uri()) . 'css/green.min.css' );
+			break;
+		default:
+			break;
+	}
 
 }
 
