@@ -19,3 +19,4 @@ Initial Release
 [!] Fixed bug in layout logic
 [!] Removed foundation Sass from theme
 [+] Added color schemes to theme options (red, greed)
+[!] Fixed bug in color schemes logic

@@ -139,20 +139,25 @@ function pdw_spine_load_styles() {
 
 	/** This loads the main theme style.css */
 	//wp_enqueue_style( 'main', get_stylesheet_uri() );
-
-	switch(hybrid_get_setting('color_scheme_select')){
-		case 'default':
-			wp_enqueue_style( 'default-scheme', trailingslashit(get_template_directory_uri()) . 'css/foundation.css' );
-			break;
-		case 'green':
-			wp_enqueue_style( 'green-scheme', trailingslashit(get_template_directory_uri()) . 'css/green.css' );
-			break;
-		case 'red':
-			wp_enqueue_style( 'red-scheme', trailingslashit(get_template_directory_uri()) . 'css/red.css' );
-			break;
-		default:
-			break;
+	$scheme = hybrid_get_setting('color_scheme_select');
+	if(!empty($scheme)){
+		switch(hybrid_get_setting('color_scheme_select')){
+			case 'default':
+				wp_enqueue_style( 'default-scheme', trailingslashit(get_template_directory_uri()) . 'css/foundation.css' );
+				break;
+			case 'green':
+				wp_enqueue_style( 'green-scheme', trailingslashit(get_template_directory_uri()) . 'css/green.css' );
+				break;
+			case 'red':
+				wp_enqueue_style( 'red-scheme', trailingslashit(get_template_directory_uri()) . 'css/red.css' );
+				break;
+			default:
+				break;
+		}
+	} else{
+		wp_enqueue_style( 'main', get_stylesheet_uri() );
 	}
+
 
 }
 
