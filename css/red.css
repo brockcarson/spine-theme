@@ -1995,7 +1995,7 @@ div.button-bar ul.button-group:last-child {
 /* line 1, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 .nav-bar {
 	height: 40px;
-	background: #919191;
+	background: #6f6f6f;
 	margin-left: 0;
 	margin-top: 20px;
 	padding: 0;
@@ -2007,7 +2007,7 @@ div.button-bar ul.button-group:last-child {
 	position: relative;
 	padding: 0;
 	margin: 0;
-	border: 1px solid #777777;
+	border: 1px solid #555555;
 	border-right: none;
 	line-height: 38px;
 	-webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset;
@@ -2022,7 +2022,7 @@ div.button-bar ul.button-group:last-child {
 }
 /* line 6, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 .nav-bar > li:last-child {
-	border-right: solid 1px #777777;
+	border-right: solid 1px #555555;
 	-webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2);
 	-moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2);
 	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2);
@@ -2044,7 +2044,7 @@ div.button-bar ul.button-group:last-child {
 }
 /* line 12, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 .nav-bar > li:hover {
-	background: #777777;
+	background: #555555;
 }
 /* line 14, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 .nav-bar > li > a {
@@ -2114,7 +2114,7 @@ div.button-bar ul.button-group:last-child {
 .nav-bar.vertical > li {
 	float: none;
 	border-bottom: none;
-	border-right: solid 1px #777777;
+	border-right: solid 1px #555555;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
@@ -2144,7 +2144,7 @@ div.button-bar ul.button-group:last-child {
 }
 /* line 42, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 .nav-bar.vertical > li:last-child {
-	border-bottom: solid 1px #777777;
+	border-bottom: solid 1px #555555;
 }
 
 /* line 48, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
@@ -2233,12 +2233,12 @@ ul.flyout li a:hover, ul.flyout li a:focus, .nav-bar li ul li a:hover, .nav-bar 
 /* line 69, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 ul.flyout li.active, .nav-bar li ul li.active {
 	margin-top: 0;
-	border-top: 1px solid #919191;
-	border-left: 4px solid #5e5e5e;
+	border-top: 1px solid #6f6f6f;
+	border-left: 4px solid #3c3c3c;
 }
 /* line 70, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_navbar.scss */
 ul.flyout li.active a, .nav-bar li ul li.active a {
-	background: #919191;
+	background: #6f6f6f;
 	border: none;
 	color: #fff;
 	height: auto;
@@ -3497,12 +3497,12 @@ ul.block-grid[data-clearing] {
 /* line 26, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_tabs.scss */
 .tabs.vertical dd.active, .tabs.vertical li.active {
 	margin-top: 0;
-	border-top: 1px solid #919191;
-	border-left: 4px solid #5e5e5e;
+	border-top: 1px solid #6f6f6f;
+	border-left: 4px solid #3c3c3c;
 }
 /* line 27, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_tabs.scss */
 .tabs.vertical dd.active a, .tabs.vertical li.active a {
-	background: #919191;
+	background: #6f6f6f;
 	border: none;
 	color: #fff;
 	height: auto;
@@ -3968,29 +3968,29 @@ ul.accordion > li.active .content {
 
 /* Side Nav ---------------------- */
 /* line 127, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_ui.scss */
-ul.side-nav, ul.xoxo.categories {
+ul.side-nav, ul.xoxo.categories, .widget ul.tweets {
 	display: block;
 	list-style: none;
 	margin: 0;
 	padding: 17px 0;
 }
 /* line 129, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_ui.scss */
-ul.side-nav li, ul.xoxo.categories li {
+ul.side-nav li, ul.xoxo.categories li, .widget ul.tweets li {
 	display: block;
 	list-style: none;
 	margin: 0 0 7px 0;
 }
 /* line 131, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_ui.scss */
-ul.side-nav li a, ul.xoxo.categories li a {
+ul.side-nav li a, ul.xoxo.categories li a, .widget ul.tweets li a {
 	display: block;
 }
 /* line 132, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_ui.scss */
-ul.side-nav li.active a, ul.xoxo.categories li.active a {
-	color: #919191;
+ul.side-nav li.active a, ul.xoxo.categories li.active a, .widget ul.tweets li.active a {
+	color: #6f6f6f;
 	font-weight: bold;
 }
 /* line 133, C:/Users/paul/.compass/extensions/foundation 3.2.3/scss/foundation/components/modules/_ui.scss */
-ul.side-nav li.divider, ul.xoxo.categories li.divider {
+ul.side-nav li.divider, ul.xoxo.categories li.divider, .widget ul.tweets li.divider {
 	border-top: 1px solid #e6e6e6;
 	height: 0;
 	padding: 0;
@@ -5934,22 +5934,27 @@ table.hide-for-medium {
 		margin: 0;
 	}
 }
+/* line 6, ../sass/_defaults.scss */
+.widget ul {
+	list-style: none;
+}
+
 /* Alignment */
-/* line 12, ../sass/_defaults.scss */
+/* line 16, ../sass/_defaults.scss */
 .alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
-/* line 17, ../sass/_defaults.scss */
+/* line 21, ../sass/_defaults.scss */
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
 
-/* line 22, ../sass/_defaults.scss */
+/* line 26, ../sass/_defaults.scss */
 .aligncenter {
 	clear: both;
 	display: block;
@@ -5958,7 +5963,7 @@ table.hide-for-medium {
 
 /* =Media
 ----------------------------------------------- */
-/* line 38, ../sass/_defaults.scss */
+/* line 42, ../sass/_defaults.scss */
 .site-header img,
 .entry-content img,
 .comment-content img,
@@ -5967,7 +5972,7 @@ table.hide-for-medium {
 	/* Fluid images for posts, comments, and widgets */
 }
 
-/* line 44, ../sass/_defaults.scss */
+/* line 48, ../sass/_defaults.scss */
 .site-header img,
 .entry-content img,
 img[class*="align"],
@@ -5976,7 +5981,7 @@ img[class*="wp-image-"] {
 	/* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
-/* line 49, ../sass/_defaults.scss */
+/* line 53, ../sass/_defaults.scss */
 .site-header img,
 .entry-content img,
 img.size-full {
@@ -5985,7 +5990,7 @@ img.size-full {
 	/* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 
-/* line 54, ../sass/_defaults.scss */
+/* line 58, ../sass/_defaults.scss */
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
 	border: none;
@@ -5994,59 +5999,59 @@ img.size-full {
 	padding: 0;
 }
 
-/* line 60, ../sass/_defaults.scss */
+/* line 64, ../sass/_defaults.scss */
 .wp-caption {
 	border: 1px solid #cccccc;
 	max-width: 100%;
 }
 
-/* line 66, ../sass/_defaults.scss */
+/* line 70, ../sass/_defaults.scss */
 .wp-caption.aligncenter,
 .wp-caption.alignleft,
 .wp-caption.alignright {
 	margin-bottom: 1.5em;
 }
 
-/* line 69, ../sass/_defaults.scss */
+/* line 73, ../sass/_defaults.scss */
 .wp-caption img {
 	display: block;
 	margin: 1.2% auto 0;
 	max-width: 98%;
 }
 
-/* line 74, ../sass/_defaults.scss */
+/* line 78, ../sass/_defaults.scss */
 .wp-caption-text {
 	text-align: center;
 }
 
-/* line 77, ../sass/_defaults.scss */
+/* line 81, ../sass/_defaults.scss */
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
 
-/* line 80, ../sass/_defaults.scss */
+/* line 84, ../sass/_defaults.scss */
 .site-content .gallery {
 	margin-bottom: 1.5em;
 }
 
-/* line 85, ../sass/_defaults.scss */
+/* line 89, ../sass/_defaults.scss */
 .site-content .gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
 }
 
-/* line 90, ../sass/_defaults.scss */
+/* line 94, ../sass/_defaults.scss */
 .site-content .gallery dd {
 	margin: 0;
 }
 
-/* line 94, ../sass/_defaults.scss */
+/* line 98, ../sass/_defaults.scss */
 .entry-meta {
 	clear: both;
 }
 
-/* line 98, ../sass/_defaults.scss */
+/* line 102, ../sass/_defaults.scss */
 .widget {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -6054,18 +6059,18 @@ img.size-full {
 	hyphens: auto;
 }
 
-/* line 105, ../sass/_defaults.scss */
+/* line 109, ../sass/_defaults.scss */
 [rel="tag"] {
 	display: inline-block;
 	margin-bottom: 2px;
 }
 
-/* line 110, ../sass/_defaults.scss */
+/* line 114, ../sass/_defaults.scss */
 .comment-list, .comment-list .children {
 	list-style-type: none;
 }
 
-/* line 121, ../sass/_defaults.scss */
+/* line 125, ../sass/_defaults.scss */
 td.label, td[rel="tag"] {
 	background: transparent;
 	line-height: inherit;
