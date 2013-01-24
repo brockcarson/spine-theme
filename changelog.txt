@@ -20,3 +20,6 @@ Initial Release
 [!] Removed foundation Sass from theme
 [+] Added color schemes to theme options (red, greed)
 [!] Fixed bug in color schemes logic
+
+(01/24/2013)
+[+] Added color schemes to customizer (no live preview)

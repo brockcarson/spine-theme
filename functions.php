@@ -64,8 +64,8 @@ function pdw_spine_theme_setup() {
 		require_once trailingslashit( get_template_directory() ) . 'includes/functions-admin.php';
 
 	/** Include theme customizer options */
-	//include_once 'includes/spine-customizer.php';
-	//add_action( 'customize_register', 'pdw_spine_customize_register' );
+	include_once 'includes/spine-customizer.php';
+	add_action( 'customize_register', 'pdw_spine_customize_register' );
 
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
