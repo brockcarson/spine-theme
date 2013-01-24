@@ -28,7 +28,7 @@ function pdw_spine_theme_setup() {
 
 	define ( 'PDW_SPINE_DIR', dirname( __FILE__ ) );
 
-	define( 'PDW_SPINE_VERSION', '0.1' );
+	define( 'PDW_SPINE_VERSION', '1.0.5' );
 
 	/** Template tags */
 	include_once 'includes/template-tags.php';
@@ -139,22 +139,23 @@ function pdw_spine_load_styles() {
 
 	/** This loads the main theme style.css */
 	//wp_enqueue_style( 'main', get_stylesheet_uri() );
-	$scheme = hybrid_get_setting('color_scheme_select');
-	if(!empty($scheme)){
-		switch(hybrid_get_setting('color_scheme_select')){
+	$scheme = hybrid_get_setting( 'color_scheme_select' );
+	if ( ! empty( $scheme ) ) {
+		switch ( hybrid_get_setting( 'color_scheme_select' ) ) {
 			case 'default':
-				wp_enqueue_style( 'default-scheme', trailingslashit(get_template_directory_uri()) . 'css/foundation.css' );
+				wp_enqueue_style( 'default-scheme', trailingslashit( get_template_directory_uri() ) . 'css/foundation.css', array(), PDW_SPINE_VERSION, 'all' );
 				break;
 			case 'green':
-				wp_enqueue_style( 'green-scheme', trailingslashit(get_template_directory_uri()) . 'css/green.css' );
+				wp_enqueue_style( 'green-scheme', trailingslashit( get_template_directory_uri() ) . 'css/green.css', array(), PDW_SPINE_VERSION, 'all' );
 				break;
 			case 'red':
-				wp_enqueue_style( 'red-scheme', trailingslashit(get_template_directory_uri()) . 'css/red.css' );
+				wp_enqueue_style( 'red-scheme', trailingslashit( get_template_directory_uri() ) . 'css/red.css', array(), PDW_SPINE_VERSION, 'all' );
 				break;
 			default:
 				break;
 		}
-	} else{
+	}
+	else {
 		wp_enqueue_style( 'main', get_stylesheet_uri() );
 	}
 
@@ -282,10 +283,11 @@ function pdw_spine_fetch_content_grid_classes() {
 	/** Search and 404 pages get default layout */
 	if ( is_404() || is_search() ) {
 		$content_classes = $span_cols;
-	} else {
+	}
+	else {
 		/** Layout logic  */
 		$layout = get_post_layout( get_the_ID() );
-		if('default' == $layout){
+		if ( 'default' == $layout ) {
 			$layout = get_theme_mod( 'theme_layout' );
 		}
 		switch ( $layout ) {
@@ -316,10 +318,11 @@ function pdw_spine_fetch_sidebar_grid_classes() {
 	/** Search and 404 pages get default layout */
 	if ( is_404() || is_search() ) {
 		$sidebar_classes = $span_cols;
-	} else {
+	}
+	else {
 		/** Layout logic  */
 		$layout = get_post_layout( get_the_ID() );
-		if('default' == $layout){
+		if ( 'default' == $layout ) {
 			$layout = get_theme_mod( 'theme_layout' );
 		}
 		switch ( $layout ) {
@@ -343,12 +346,12 @@ function pdw_spine_fetch_sidebar_grid_classes() {
 	return $sidebar_classes;
 }
 
-function pdw_spine_class_names($classes) {
+function pdw_spine_class_names( $classes ) {
 	// add 'class-name' to the $classes array
-	$classes[] = hybrid_get_setting('color_scheme_select');
+	$classes[] = hybrid_get_setting( 'color_scheme_select' );
 	// return the $classes array
 	return $classes;
 }
 
 //Now add test class to the filter
-add_filter('body_class','pdw_spine_class_names');
+add_filter( 'body_class', 'pdw_spine_class_names' );
