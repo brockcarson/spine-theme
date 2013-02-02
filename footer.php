@@ -16,9 +16,11 @@
 ?>
 
 <?php
-
-if(  is_404() || is_search() ){
+if(is_front_page()){
+	// nothing
+} elseif(  is_404() || is_search() ){
 	get_sidebar();
+
 } else {
 	/** No sidebar on full width content */
 	$layout = get_post_layout( get_the_ID() );

@@ -73,7 +73,7 @@ function pdw_spine_theme_setup() {
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
 	/** Add theme support for framework extensions. */
-	add_theme_support( 'post-stylesheets' );
+	//add_theme_support( 'post-stylesheets' );
 	add_theme_support( 'dev-stylesheet' );
 	//add_theme_support( 'loop-pagination' );
 	add_theme_support( 'get-the-image' );
@@ -82,7 +82,7 @@ function pdw_spine_theme_setup() {
 
 	/** Add theme support for WordPress features. */
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
+	//add_theme_support( 'post-formats', array( 'image', 'gallery' ) );
 
 	add_theme_support( 'theme-layouts', array( '2c-l', '2c-r', '1c' ) );
 

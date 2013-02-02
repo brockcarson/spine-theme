@@ -1,9 +1,8 @@
 <?php
 /**
- * Project Name - Short Description
+ * Template Name: Front Page Template
  *
- * Long Description
- * Can span several lines
+ * A template for a static front page
  *
  * @package    demos.dev
  * @subpackage subfolder
@@ -18,34 +17,35 @@ get_header(); ?>
 
 <!-- First Band (Image) -->
 
-<div class="row">
+
 	<div class="twelve columns">
 		<?php dynamic_sidebar('banded-first-band'); ?>
 		<hr />
 	</div>
-</div>
+
 
 <!-- Second Band (Image Left with Text) -->
 
-<div class="row">
+
 	<div class="four columns">
 		<?php dynamic_sidebar('banded-second-band-1'); ?>
 	</div>
 	<div class="eight columns">
 		<?php dynamic_sidebar('banded-second-band-2'); ?>
+
 	</div>
-</div>
+<hr />
 
 
 <!-- Third Band (Image Right with Text) -->
 
-<div class="row">
+
 	<div class="eight columns">
 		<?php dynamic_sidebar('banded-third-band-1'); ?>
 	</div>
 	<div class="four columns">
 		<?php dynamic_sidebar('banded-third-band-2'); ?>
 	</div>
-</div>
+
 
 <?php get_footer();
