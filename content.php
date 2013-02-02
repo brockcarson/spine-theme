@@ -22,7 +22,7 @@
 
         <header class="entry-header twelve columns">
 					<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title">', '</h1>', false ) ); ?>
-					<?php echo apply_atomic_shortcode( 'byline', '<div class="byline"><h6>' . __( 'Published by [entry-author] on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'spine' ) . '</h6></div>' ); ?>
+					<?php echo apply_atomic_shortcode( 'byline', '<div class="byline"><p>' . __( 'Published by [entry-author] on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'spine' ) . '</p></div>' ); ?>
         </header><!-- .entry-header -->
         <div class="entry-content twelve columns">
 					<?php the_content(); ?>
@@ -37,16 +37,16 @@
 
 				<?php $image = get_the_image( array( 'echo' => false ) ); ?>
 			<?php if ( !empty($image) ) { ?>
-				<div class="two columns mobile-one">
+				<div class="twelve columns">
 						<?php }else{ ?>
 					<div class="twelve columns">
 				<?php } ?>
-			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
+			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Thumbnail', 'size' => 'featured' ) ); ?>
 			<?php if (  !empty($image) ) : ?></div><!-- two columns --><?php endif; ?>
-			<?php if (  !empty($image) ) : ?><div class="ten columns"><?php endif; ?>
+			<?php if (  !empty($image) ) : ?><div class="twelve columns"><?php endif; ?>
         <header class="entry-header">
 					<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
-					<?php echo apply_atomic_shortcode( 'byline', '<div class="byline"><h6>' . __( 'Published by [entry-author] on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'spine' ) . '</h6></div>' ); ?>
+					<?php echo apply_atomic_shortcode( 'byline', '<div class="byline"><p>' . __( 'Published by [entry-author] on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'spine' ) . '</p></div>' ); ?>
         </header><!-- .entry-header -->
 
         <div class="entry-summary">
