@@ -32,4 +32,4 @@ global $post, $comment;
 
 	<?php do_atomic( 'after_comment' ); // spine_after_comment ?>
 
-<?php /* No closing </li> is needed.  WordPress will know where to add it. */ ?>
+<?php /* No closing </li> is needed.  WordPress will know where to add it. */

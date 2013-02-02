@@ -59,5 +59,5 @@
 
 	<?php do_atomic( 'after_content' ); // pdw_spine_after_content ?>
 
-<?php get_footer();?>
+<?php get_footer();
 

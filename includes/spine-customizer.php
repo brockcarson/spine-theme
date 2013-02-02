@@ -16,8 +16,8 @@
 add_action( 'customize_register', 'pdw_spine_customize_register' );
 
 /* Add the footer content Ajax to the correct hooks. */
-//add_action( 'wp_ajax_pdw_spine_customize_footer_content', 'pdw_spine_customize_footer_content_ajax' );
-//add_action( 'wp_ajax_nopriv_pdw_spine_customize_footer_content', 'pdw_spine_customize_footer_content_ajax' );
+add_action( 'wp_ajax_pdw_spine_customize_footer_content', 'pdw_spine_customize_colors_ajax' );
+add_action( 'wp_ajax_nopriv_pdw_spine_customize_footer_content', 'pdw_spine_customize_colors_ajax' );
 
 
 
@@ -34,7 +34,7 @@ function pdw_spine_customize_register( $wp_customize ) {
 	$prefix = hybrid_get_prefix();
 
 
-		/* Add the footer section. */
+		/* Add the color scheme section. */
 		$wp_customize->add_section(
 			'spine-scheme',
 			array(
@@ -44,7 +44,7 @@ function pdw_spine_customize_register( $wp_customize ) {
 			)
 		);
 
-		/* Add the 'footer_insert' setting. */
+		/*Add the ' color scheme ' setting.
 		$wp_customize->add_setting(
 			"{$prefix}_theme_settings[color_scheme_select]",
 			array(
@@ -64,6 +64,8 @@ function pdw_spine_customize_register( $wp_customize ) {
 		'green' => __('Green', 'spine'),
 	);
 
+
+
 $wp_customize->add_control( 'spine_color_scheme', array(
 'label' => __( 'Color Scheme', 'spine' ),
 'section'=> 'spine-scheme',
@@ -71,10 +73,95 @@ $wp_customize->add_control( 'spine_color_scheme', array(
 'type'=> 'radio',
 'choices'=> $schemes
 ) );
+*/
+	$wp_customize->add_setting(
+		"{$prefix}_theme_settings[headline_color]",
+		array(
+			'default'              => '#2795b6',
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'pdw_spine_customize_sanitize',
+			'sanitize_js_callback' => 'pdw_spine_customize_sanitize',
+			'transport'            => 'postMessage',
+		)
+	);
 
-		/* If viewing the customize preview screen, add a script to show a live preview. */
-	//	if ( $wp_customize->is_preview() && !is_admin() )
-	//		add_action( 'wp_footer', 'pdw_spine_customize_preview_script', 21 );
+$wp_customize->add_control(
+	new WP_Customize_Color_Control($wp_customize,'headline_color',
+	array('label' => __('Headline color','spine'),
+	'section' => 'spine-scheme',
+	'settings'=> "{$prefix}_theme_settings[headline_color]",
+	)
+	)
+);
+
+	$wp_customize->add_setting(
+		"{$prefix}_theme_settings[body_color]",
+		array(
+			'default'              => '#222',
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'pdw_spine_customize_sanitize',
+			'sanitize_js_callback' => 'pdw_spine_customize_sanitize',
+			'transport'            => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control($wp_customize,'body_color',
+			array('label' => __('Body Text color','spine'),
+						'section' => 'spine-scheme',
+						'settings'=> "{$prefix}_theme_settings[body_color]",
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		"{$prefix}_theme_settings[link_color]",
+		array(
+			'default'              => '#2ba6cb',
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'pdw_spine_customize_sanitize',
+			'sanitize_js_callback' => 'pdw_spine_customize_sanitize',
+			'transport'            => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control($wp_customize,'link_color',
+			array('label' => __('Link Text color','spine'),
+						'section' => 'spine-scheme',
+						'settings'=> "{$prefix}_theme_settings[link_color]",
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		"{$prefix}_theme_settings[link_hover_color]",
+		array(
+			'default'              => '#2795b6',
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'pdw_spine_customize_sanitize',
+			'sanitize_js_callback' => 'pdw_spine_customize_sanitize',
+			'transport'            => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control($wp_customize,'link_hover_color',
+			array('label' => __('Link Hover Text color','spine'),
+						'section' => 'spine-scheme',
+						'settings'=> "{$prefix}_theme_settings[link_hover_color]",
+			)
+		)
+	);
+
+	/* If viewing the customize preview screen, add a script to show a live preview. */
+		if ( $wp_customize->is_preview() && !is_admin() )
+			add_action( 'wp_footer', 'pdw_spine_customize_preview_script', 21 );
+
 }
 
 /**
@@ -101,60 +188,44 @@ function pdw_spine_customize_sanitize( $setting, $object ) {
 }
 
 /**
- * Runs the footer content posted via Ajax through the do_shortcode() function.  This makes sure the
- * shortcodes are output correctly in the live preview.
- *
- * @since 1.4.0
- * @access private
- */
-function pdw_spine_customize_footer_content_ajax() {
-
-	/* Check the AJAX nonce to make sure this is a valid request. */
-	check_ajax_referer( 'pdw_spine_customize_footer_content_nonce' );
-
-	/* If footer content has been posted, run it through the do_shortcode() function. */
-	if ( isset( $_POST['footer_content'] ) )
-		echo do_shortcode( wp_kses_stripslashes( $_POST['footer_content'] ) );
-
-	/* Always die() when handling Ajax. */
-	die();
-}
-
-/**
  * Handles changing settings for the live preview of the theme.
  *
  * @since 1.4.0
  * @access private
  */
 function pdw_spine_customize_preview_script() {
-
-	/* Create a nonce for the Ajax. */
-	$nonce = wp_create_nonce( 'pdw_spine_customize_footer_content_nonce' );
-
 	?>
 <script type="text/javascript">
-	wp.customize(
-			'<?php echo pdw_spine_get_prefix(); ?>_theme_settings[footer_insert]',
-			function( value ) {
-				value.bind(
-						function( to ) {
-							jQuery.post(
-									'<?php echo admin_url( 'admin-ajax.php' ); ?>',
-									{
-										action: 'pdw_spine_customize_footer_content',
-										_ajax_nonce: '<?php echo $nonce; ?>',
-										footer_content: to
-									},
-									function( response ) {
-										jQuery( '.footer-content' ).html( response );
-									}
-							);
-						}
-				);
-			}
-	);
+	( function( $ ) {
+		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[body_color]',function( value ) {
+			value.bind(function(to) {
+				$('body').css('color', to );
+			});
+		});
+		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[headline_color]',function( value ) {
+			value.bind(function(to) {
+				$('h1, h2, h2 a, h3, h4, h5, h6').css('color', to );
+			});
+		});
+		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[link_color]',function( value ) {
+			value.bind(function(to) {
+				$('a:link,a:visited').css('color', to );
+			});
+		});
+		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[link_hover_color]',function( value ) {
+			var linkColor = $('a').css('color');
+			value.bind(function(to) {
+				$('a').on({
+					mouseenter: function(to){
+						$(this).css('color', to );
+					},
+					mouseleave: function(linkColor){
+						$(this).css('color', linkColor );
+					}
+				})
+			});
+		});
+	} )( jQuery )
 </script>
 <?php
 }
-
-?>

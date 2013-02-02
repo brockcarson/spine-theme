@@ -90,4 +90,4 @@ get_header(); // Loads the header.php template. ?>
 
 <?php do_atomic( 'after_content' ); // spine_after_content ?>
 
-<?php get_footer(); // Loads the footer.php template. ?>
+<?php get_footer(); // Loads the footer.php template.

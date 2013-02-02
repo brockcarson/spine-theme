@@ -33,4 +33,4 @@ if ( has_nav_menu( 'subsidiary' ) ) : ?>
 
 <?php do_atomic( 'after_menu_subsidiary' ); // spine_after_menu_subsidiary ?>
 
-<?php endif; ?>
+<?php endif;

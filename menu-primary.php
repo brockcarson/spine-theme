@@ -31,4 +31,4 @@ if ( has_nav_menu( 'primary' ) ) : ?>
 
 <?php do_atomic( 'after_menu_primary' ); // spine_after_menu_primary ?>
 
-<?php endif; ?>
+<?php endif;

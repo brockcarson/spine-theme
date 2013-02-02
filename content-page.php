@@ -54,4 +54,4 @@ do_atomic( 'before_entry' ); // spine_before_entry ?>
 
 </article><!-- .hentry -->
 
-<?php do_atomic( 'after_entry' ); // spine_after_entry ?>
+<?php do_atomic( 'after_entry' ); // spine_after_entry

@@ -59,7 +59,7 @@ $schemes = pdw_spine_fetch_default_color_schemes();
 								<p><select id="<?php echo esc_attr(hybrid_settings_field_id( 'color_scheme_select' )); ?>" name="<?php echo esc_attr(hybrid_settings_field_name( 'color_scheme_select' )); ?>">
 										<?php
 									foreach( $schemes as $key => $value){ ?>
-                      <option value="<?php echo $key; ?>" <?php selected( hybrid_get_setting('color_scheme_select'), "{$key}" ); ?>><?php esc_html_e($value,'spine'); ?></option>
+                      <option value="<?php echo esc_attr($key); ?>" <?php selected( hybrid_get_setting('color_scheme_select'), "{$key}" ); ?>><?php esc_html_e($value,'spine'); ?></option>
 								<?php } ?>
 
 								</select></p>

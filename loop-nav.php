@@ -14,4 +14,4 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-pdw_spine_numeric_posts_nav(); ?>
+pdw_spine_numeric_posts_nav();

@@ -63,16 +63,14 @@ function pdw_spine_theme_setup() {
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
 
 	/** Include Spine theme settings */
-	if ( is_admin() )
-		require_once trailingslashit( get_template_directory() ) . 'includes/functions-admin.php';
+	//if ( is_admin() )
+	//	include_once PDW_SPINE_INC_DIR . 'functions-admin.php';
 
 	/** Include theme customizer options */
 	include_once 'includes/spine-customizer.php';
 	add_action( 'customize_register', 'pdw_spine_customize_register' );
 
 	add_theme_support( 'hybrid-core-template-hierarchy' );
-
-	//add_theme_support( 'hybrid-core-seo' );
 
 	/** Add theme support for framework extensions. */
 	add_theme_support( 'post-stylesheets' );
@@ -131,40 +129,122 @@ function pdw_spine_theme_setup() {
 	//add_filter('post_thumbnail_html', 'pdw_spine_add_thumbnail_class',10, 3 );
 	add_filter( 'get_the_image', 'pdw_spine_add_featured_img_class', 10, 1 );
 
+	/** Register widget areas */
+	add_action('widgets_init', 'pdw_spine_register_sidebars');
+
+	add_filter("{$prefix}_sidebar_defaults", 'spine_sidebar_defaults');
+
 }
 
 add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
+
+/**
+ * Registers Spine extra widget areas
+ */
+function pdw_spine_register_sidebars(){
+		/** Register front-page widget areas */
+	register_sidebar(
+		array(
+			'id' => 'banded-first-band',
+			'name' => __( 'Banded First Band' ),
+			'description' => __( 'This is the full width area at the top of the Banded template.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'banded-second-band-1',
+			'name' => __( 'Banded Second Band 1' ),
+			'description' => __( 'This is the narrow area in the middle of the Banded template.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'banded-second-band-2',
+			'name' => __( 'Banded Second Band 2' ),
+			'description' => __( 'This is the wider area in the middle of the Banded template.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'banded-third-band-1',
+			'name' => __( 'Banded Third Band 1' ),
+			'description' => __( 'This is the wider area at the bottom of the Banded template.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'banded-third-band-2',
+			'name' => __( 'Banded Third Band 2' ),
+			'description' => __( 'This is the narrow area at the bottom of the Banded template.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+}
+
+function spine_sidebar_defaults($defaults){
+
+	/* Set up some default sidebar arguments. */
+	$spine = array(
+		'before_widget' => '<article id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+		'after_widget'  => '</div></article>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>'
+	);
+
+	array_merge($defaults,$spine);
+	return $spine;
+}
 
 /**
  * Load the necessary CSS files
  */
 function pdw_spine_load_styles() {
 
-	/** Load Google fonts */
-	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Arvo|PT+Sans', array(), PDW_SPINE_VERSION, 'all' );
+	/* translators: If there are characters in your language that are not supported
+	   by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'spine' ) ) {
+		$subsets = 'latin,latin-ext';
 
-	/** Load stylesheet depending on selected color scheme */
-	$scheme = hybrid_get_setting( 'color_scheme_select' );
-	if ( ! empty( $scheme ) ) {
-		switch ( hybrid_get_setting( 'color_scheme_select' ) ) {
-			case 'default':
-				wp_enqueue_style( 'default-scheme', trailingslashit( get_template_directory_uri() ) . 'css/foundation.css', array(), PDW_SPINE_VERSION, 'all' );
-				break;
-			case 'green':
-				wp_enqueue_style( 'green-scheme', trailingslashit( get_template_directory_uri() ) . 'css/green.css', array(), PDW_SPINE_VERSION, 'all' );
-				break;
-			case 'red':
-				wp_enqueue_style( 'red-scheme', trailingslashit( get_template_directory_uri() ) . 'css/red.css', array(), PDW_SPINE_VERSION, 'all' );
-				break;
-			default:
-				break;
-		}
+		/* translators: To add an additional Open Sans character subset specific to your language, translate
+		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
+		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'spine' );
+
+		if ( 'cyrillic' == $subset )
+			$subsets .= ',cyrillic,cyrillic-ext';
+		elseif ( 'greek' == $subset )
+			$subsets .= ',greek,greek-ext';
+		elseif ( 'vietnamese' == $subset )
+			$subsets .= ',vietnamese';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => 'Open+Sans|Gentium+Basic',
+			'subset' => $subsets,
+		);
+		wp_enqueue_style( 'spine-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
 	}
-	else {
+
 		/** This loads the main theme style.css */
 		wp_enqueue_style( 'main', get_stylesheet_uri() );
-	}
-
 
 }
 
@@ -307,7 +387,7 @@ function pdw_spine_fetch_content_grid_classes() {
 				$content_classes = $span_cols;
 				break;
 			case '2c-l':
-				$content_classes = $span_cols . " push-three";
+				$content_classes = $span_cols . " push-four";
 				break;
 			default:
 				$content_classes = $span_cols;
@@ -361,3 +441,13 @@ function pdw_spine_class_names( $classes ) {
 
 //Now add test class to the filter
 add_filter( 'body_class', 'pdw_spine_class_names' );
+
+function pdw_spine_wp_head() {
+	$body_color = hybrid_get_setting( 'body_color' );
+	$headline_color = hybrid_get_setting( 'headline_color' );
+	$link_color = hybrid_get_setting( 'link_color' );
+	$link_hover_color = hybrid_get_setting( 'link_hover_color' );
+
+	echo "<style> body { color: $body_color; } h1, h2, h3, h4, h5, h6 { color: $headline_color } a:link, a:visited { color: $link_color; } a:hover { color: $link_hover_color; } </style>";
+}
+add_action( 'wp_head', 'pdw_spine_wp_head' );
