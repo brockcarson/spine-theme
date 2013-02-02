@@ -131,48 +131,9 @@ function pdw_spine_theme_setup() {
 	//add_filter('post_thumbnail_html', 'pdw_spine_add_thumbnail_class',10, 3 );
 	add_filter( 'get_the_image', 'pdw_spine_add_featured_img_class', 10, 1 );
 
-	/** Load ACF Lite custom field library */
-
-	add_filter('acf_folder_dir', 'lpr_change_acf_uri');
-	include_once( PDW_SPINE_INC_DIR . 'acf/acf-lite.php' );
-	include_once( PDW_SPINE_INC_DIR . 'custom-fields.php' );
 }
 
 add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
-
-/**
- * Change the ACF folder location
- * @param $dir
- *
- * @return string
- */
-function lpr_change_acf_uri($dir){
-	$dir = trailingslashit(get_template_directory_uri()) . 'includes/acf';
-	return $dir;
-}
-
-/**
- * Activate ACF addons
- * https://github.com/elliotcondon/acf-lite#distributing-acf-lite-in-your-themes
- * @param $options
- *
- * @return mixed
- */
-function pdw_spine_acf_settings( $options )
-{
-	// activate add-ons
-	$options['activation_codes']['repeater'] = 'QJF7-L4IX-UCNP-RF2W';
-	//$options['activation_codes']['options_page'] = 'XXXX-XXXX-XXXX-XXXX';
-
-
-	// set options page structure
-	//$options['options_page']['title'] = 'Global Options';
-	//$options['options_page']['pages'] = array('Header', 'Footer');
-
-
-	return $options;
-}
-add_filter('acf_settings', 'pdw_spine_acf_settings');
 
 /**
  * Load the necessary CSS files
