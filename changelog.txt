@@ -23,3 +23,10 @@ Initial Release
 
 (01/24/2013)
 [+] Added color schemes to customizer (no live preview)
+
+(03/02/2013)
+[-] Removed color scheme select
+[+] Added color pickers to customizer for text
+[+] Added front page template
+[!] Fixed bug in sidebar display logic for front page template
+[+] Added language files for translation
