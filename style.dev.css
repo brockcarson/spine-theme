@@ -3225,7 +3225,7 @@ div.alert-box a.close:hover, div.validation_error a.close:hover, div.alert-box a
 }
 
 /* Labels ---------------------- */
-.label, [rel="tag"] {
+.label {
 	padding: 1px 4px 2px;
 	font-size: 16px;
 	font-weight: bold;
@@ -3239,14 +3239,14 @@ div.alert-box a.close:hover, div.validation_error a.close:hover, div.alert-box a
 	color: #fff;
 	background: #2ba6cb;
 }
-.label.radius, .radius[rel="tag"] {
+.label.radius {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
 	border-radius: 3px;
 }
-.label.round, .round[rel="tag"] {
+.label.round {
 	padding: 1px 7px 2px;
 	-webkit-border-radius: 1000px;
 	-moz-border-radius: 1000px;
@@ -3254,13 +3254,13 @@ div.alert-box a.close:hover, div.validation_error a.close:hover, div.alert-box a
 	-o-border-radius: 1000px;
 	border-radius: 1000px;
 }
-.label.alert, .alert[rel="tag"], [rel="tag"].validation_error, .label.validation_error {
+.label.alert, .label.validation_error {
 	background-color: #c60f13;
 }
-.label.success, .success[rel="tag"] {
+.label.success {
 	background-color: #5da423;
 }
-.label.secondary, .secondary[rel="tag"] {
+.label.secondary {
 	background-color: #e9e9e9;
 	color: #505050;
 }
@@ -5321,7 +5321,7 @@ img.size-full {
 	list-style-type: none;
 }
 
-td.label, td[rel="tag"] {
+td.label {
 	background: transparent;
 	line-height: inherit;
 }

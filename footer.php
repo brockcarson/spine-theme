@@ -16,7 +16,7 @@
 ?>
 
 <?php
-if(is_front_page()){
+if(is_page_template('front-page.php')){
 	// nothing
 } elseif(  is_404() || is_search() ){
 	get_sidebar();
