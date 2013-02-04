@@ -62,10 +62,6 @@ function pdw_spine_theme_setup() {
 	/** Add theme settings */
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
 
-	/** Include Spine theme settings */
-	//if ( is_admin() )
-	//	include_once PDW_SPINE_INC_DIR . 'functions-admin.php';
-
 	/** Include theme customizer options */
 	include_once 'includes/spine-customizer.php';
 	add_action( 'customize_register', 'pdw_spine_customize_register' );
@@ -148,7 +144,7 @@ function pdw_spine_register_sidebars(){
 		array(
 			'id' => 'banded-first-band',
 			'name' => __( 'Banded First Band','spine' ),
-			'description' => __( 'This is the full width area at the top of the Banded template.' ),
+			'description' => __( 'This is the full width area at the top of the Banded template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -159,7 +155,7 @@ function pdw_spine_register_sidebars(){
 		array(
 			'id' => 'banded-second-band-1',
 			'name' => __( 'Banded Second Band 1','spine' ),
-			'description' => __( 'This is the narrow area in the middle of the Banded template.' ),
+			'description' => __( 'This is the narrow area in the middle of the Banded template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -170,7 +166,7 @@ function pdw_spine_register_sidebars(){
 		array(
 			'id' => 'banded-second-band-2',
 			'name' => __( 'Banded Second Band 2','spine' ),
-			'description' => __( 'This is the wider area in the middle of the Banded template.' ),
+			'description' => __( 'This is the wider area in the middle of the Banded template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -181,7 +177,7 @@ function pdw_spine_register_sidebars(){
 		array(
 			'id' => 'banded-third-band-1',
 			'name' => __( 'Banded Third Band 1','spine' ),
-			'description' => __( 'This is the wider area at the bottom of the Banded template.' ),
+			'description' => __( 'This is the wider area at the bottom of the Banded template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -192,7 +188,7 @@ function pdw_spine_register_sidebars(){
 		array(
 			'id' => 'banded-third-band-2',
 			'name' => __( 'Banded Third Band 2','spine' ),
-			'description' => __( 'This is the narrow area at the bottom of the Banded template.' ),
+			'description' => __( 'This is the narrow area at the bottom of the Banded template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
