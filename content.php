@@ -41,7 +41,7 @@
 						<?php }else{ ?>
 					<div class="twelve columns">
 				<?php } ?>
-			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Thumbnail', 'size' => 'featured' ) ); ?>
+			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Featured', 'size' => 'featured' ) ); ?>
 			<?php if (  !empty($image) ) : ?></div><!-- two columns --><?php endif; ?>
 			<?php if (  !empty($image) ) : ?><div class="twelve columns"><?php endif; ?>
         <header class="entry-header">

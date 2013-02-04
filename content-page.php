@@ -37,7 +37,7 @@ do_atomic( 'before_entry' ); // spine_before_entry ?>
 
 	<?php } else { ?>
 
-	<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
+	<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'link_to_post' => false, 'meta_key' => 'Featured', 'size' => 'featured' ) ); ?>
 
     <header class="entry-header">
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>

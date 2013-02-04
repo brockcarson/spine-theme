@@ -15,7 +15,7 @@ Initial Release
 [!] Fixed bug with layout logic
 [!] Fixed bug with search form
 
-(22/01/2013)
+(01/22/2013)
 [!] Fixed bug in layout logic
 [!] Removed foundation Sass from theme
 [+] Added color schemes to theme options (red, greed)
@@ -24,9 +24,12 @@ Initial Release
 (01/24/2013)
 [+] Added color schemes to customizer (no live preview)
 
-(03/02/2013)
+(02/03/2013)
 [-] Removed color scheme select
 [+] Added color pickers to customizer for text
 [+] Added front page template
 [!] Fixed bug in sidebar display logic for front page template
 [+] Added language files for translation
+
+(02/04/2013)
+[+] Editor styles
