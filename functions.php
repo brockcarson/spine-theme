@@ -126,7 +126,7 @@ function pdw_spine_theme_setup() {
 	add_filter( 'get_the_image', 'pdw_spine_add_featured_img_class', 10, 1 );
 
 	/** Register widget areas */
-	add_action('widgets_init', 'pdw_spine_register_sidebars');
+	add_action('widgets_init', 'pdw_spine_register_sidebars', 11);
 
 	add_filter("{$prefix}_sidebar_defaults", 'spine_sidebar_defaults');
 
@@ -143,8 +143,8 @@ function pdw_spine_register_sidebars(){
 	register_sidebar(
 		array(
 			'id' => 'banded-first-band',
-			'name' => __( 'Banded First Band','spine' ),
-			'description' => __( 'This is the full width area at the top of the Banded template.','spine'  ),
+			'name' => __( 'Front Page First Band','spine' ),
+			'description' => __( 'This is the full width area at the top of the Front Page template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -154,8 +154,8 @@ function pdw_spine_register_sidebars(){
 	register_sidebar(
 		array(
 			'id' => 'banded-second-band-1',
-			'name' => __( 'Banded Second Band 1','spine' ),
-			'description' => __( 'This is the narrow area in the middle of the Banded template.','spine'  ),
+			'name' => __( 'Front Page Second Band 1','spine' ),
+			'description' => __( 'This is the narrow area in the middle of the Front Page template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -165,8 +165,8 @@ function pdw_spine_register_sidebars(){
 	register_sidebar(
 		array(
 			'id' => 'banded-second-band-2',
-			'name' => __( 'Banded Second Band 2','spine' ),
-			'description' => __( 'This is the wider area in the middle of the Banded template.','spine'  ),
+			'name' => __( 'Front Page Second Band 2','spine' ),
+			'description' => __( 'This is the wider area in the middle of the Front Page template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -176,8 +176,8 @@ function pdw_spine_register_sidebars(){
 	register_sidebar(
 		array(
 			'id' => 'banded-third-band-1',
-			'name' => __( 'Banded Third Band 1','spine' ),
-			'description' => __( 'This is the wider area at the bottom of the Banded template.','spine'  ),
+			'name' => __( 'Front Page Third Band 1','spine' ),
+			'description' => __( 'This is the wider area at the bottom of the Front Page template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -187,8 +187,8 @@ function pdw_spine_register_sidebars(){
 	register_sidebar(
 		array(
 			'id' => 'banded-third-band-2',
-			'name' => __( 'Banded Third Band 2','spine' ),
-			'description' => __( 'This is the narrow area at the bottom of the Banded template.','spine'  ),
+			'name' => __( 'Front Page Third Band 2','spine' ),
+			'description' => __( 'This is the narrow area at the bottom of the Front Page template.','spine'  ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -380,10 +380,10 @@ function pdw_spine_fetch_content_grid_classes() {
 			case '1c' :
 				$content_classes = "twelve columns";
 				break;
-			case '2c-r':
+			case '2c-l':
 				$content_classes = $span_cols;
 				break;
-			case '2c-l':
+			case '2c-r':
 				$content_classes = $span_cols . " push-four";
 				break;
 			default:
@@ -415,10 +415,10 @@ function pdw_spine_fetch_sidebar_grid_classes() {
 			case '1c' :
 				$sidebar_classes = "twelve columns";
 				break;
-			case '2c-r':
+			case '2c-l':
 				$sidebar_classes = $span_cols;
 				break;
-			case '2c-l':
+			case '2c-r':
 				$sidebar_classes = $span_cols . " pull-nine";
 				break;
 			default:
