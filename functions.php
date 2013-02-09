@@ -256,6 +256,7 @@ function pdw_spine_load_scripts() {
 	wp_enqueue_script( 'foundation-navigation', PDW_SPINE_JS_URL . 'jquery.foundation.navigation.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 	wp_enqueue_script( 'foundation-topbar', PDW_SPINE_JS_URL . 'jquery.foundation.topbar.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 	wp_enqueue_script( 'foundation-tabs', PDW_SPINE_JS_URL . 'jquery.foundation.tabs.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
+	//wp_enqueue_script( 'foundation-clearing', PDW_SPINE_JS_URL . 'jquery.foundation.clearing.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 
 	/** This is the main javascript file */
 	wp_enqueue_script( 'foundation-app', PDW_SPINE_JS_URL . 'app.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
@@ -552,4 +553,11 @@ function spine_image_info() {
 
 	/* Display the image info and allow devs to overwrite the final output. */
 	echo apply_atomic( 'image_info', $output );
+}
+
+
+add_filter('wp_get_attachment_image_attributes','pdw_spine_attachment_attrs',10,2);
+function pdw_spine_attachment_attrs($attr, $attachment ){
+	$attr['data-caption'] = $attachment->post_title;
+	return $attr;
 }

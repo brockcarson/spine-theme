@@ -133,14 +133,14 @@ if ( ! function_exists( 'cleaner_gallery' ) ) {
 			'9' => 'nine',
 		);
 		/* Open the gallery <div>. */
-		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}'>";
+		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' data-clearing>";
 
 		/* Loop through each attachment. */
 		foreach ( $attachments as $id => $attachment ) {
 
 			/* Open each gallery row.		*/
 			if ( $columns > 0 && $i % $columns == 0 )
-				$output .= "\n\t\t\t\t<div class='block-grid {$numbers[$columns]}-up mobile-one-up'>";
+				$output .= "\n\t\t\t\t<div class='block-grid {$numbers[$columns]}-up mobile-two-up'>";
 
 
 			/* Open each gallery item. */

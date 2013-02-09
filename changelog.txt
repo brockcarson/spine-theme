@@ -8,21 +8,16 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(01/10/2013)
-Initial Release
+(02/09/2013)
+[!] Fixed bug in gallery shortcode
+[!] Added missing attachment template functions
+[!] Made CSS less specific for button styles
 
-(01/10/2013)
-[!] Fixed bug with layout logic
-[!] Fixed bug with search form
+(02/07/2013)
+[!] Fixed bug in Hybrid layouts (layouts were swapped)
 
-(01/22/2013)
-[!] Fixed bug in layout logic
-[!] Removed foundation Sass from theme
-[+] Added color schemes to theme options (red, greed)
-[!] Fixed bug in color schemes logic
-
-(01/24/2013)
-[+] Added color schemes to customizer (no live preview)
+(02/04/2013)
+[+] Editor styles
 
 (02/03/2013)
 [-] Removed color scheme select
@@ -31,8 +26,18 @@ Initial Release
 [!] Fixed bug in sidebar display logic for front page template
 [+] Added language files for translation
 
-(02/04/2013)
-[+] Editor styles
+(01/24/2013)
+[+] Added color schemes to customizer (no live preview)
 
-(02/07/2013)
-[!] Fixed bug in Hybrid layouts (layouts were swapped)
+(01/22/2013)
+[!] Fixed bug in layout logic
+[!] Removed foundation Sass from theme
+[+] Added color schemes to theme options (red, greed)
+[!] Fixed bug in color schemes logic
+
+(01/10/2013)
+[!] Fixed bug with layout logic
+[!] Fixed bug with search form
+
+(01/10/2013)
+Initial Release
