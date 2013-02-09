@@ -131,6 +131,12 @@ function pdw_spine_theme_setup() {
 	add_filter("{$prefix}_sidebar_defaults", 'spine_sidebar_defaults');
 
 	add_editor_style();
+
+	/** Jetpack feature */
+	add_theme_support( 'infinite-scroll', array(
+		'container'  => 'hfeed',
+		'footer'     => 'page',
+	) );
 }
 
 add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
