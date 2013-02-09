@@ -255,6 +255,7 @@ function pdw_spine_load_scripts() {
 	wp_enqueue_script( 'foundation-mq-toggle', PDW_SPINE_JS_URL . 'jquery.foundation.mediaQueryToggle.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 	wp_enqueue_script( 'foundation-navigation', PDW_SPINE_JS_URL . 'jquery.foundation.navigation.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 	wp_enqueue_script( 'foundation-topbar', PDW_SPINE_JS_URL . 'jquery.foundation.topbar.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
+	wp_enqueue_script( 'foundation-tabs', PDW_SPINE_JS_URL . 'jquery.foundation.tabs.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
 
 	/** This is the main javascript file */
 	wp_enqueue_script( 'foundation-app', PDW_SPINE_JS_URL . 'app.js', array( 'jquery' ), PDW_SPINE_VERSION, true );
@@ -445,7 +446,7 @@ function pdw_spine_wp_head() {
 	$link_color = hybrid_get_setting( 'link_color' );
 	$link_hover_color = hybrid_get_setting( 'link_hover_color' );
 
-	echo "<style> body { color: $body_color; } h1, h2, h3, h4, h5, h6 { color: $headline_color } a:link, a:visited { color: $link_color; } a:hover { color: $link_hover_color; } </style>";
+	echo "<style> body { color: $body_color; } h1, h2, h3, h4, h5, h6 { color: $headline_color } a { color: $link_color; } a:hover { color: $link_hover_color; } </style>";
 }
 add_action( 'wp_head', 'pdw_spine_wp_head' );
 
