@@ -7,7 +7,7 @@
  *
  * @package    demos.dev
  * @subpackage subfolder
- * @version    0.1
+ * @version    1.2.0
  * @author     paul <pauldewouters@gmail.com>
  * @copyright  Copyright (c) 2012, Paul de Wouters
  * @link       http://pauldewouters.com
@@ -31,7 +31,7 @@ function pdw_spine_theme_setup() {
 
 	define ( 'PDW_SPINE_DIR', dirname( __FILE__ ) );
 
-	define( 'PDW_SPINE_VERSION', '1.1.1' );
+	define( 'PDW_SPINE_VERSION', '1.2.0' );
 
 	/** Template tags */
 	include_once PDW_SPINE_INC_DIR . 'template-tags.php';
