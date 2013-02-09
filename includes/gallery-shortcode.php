@@ -41,7 +41,7 @@ add_filter( 'post_gallery', 'cleaner_gallery', 10, 2 );
 
 if ( ! function_exists( 'cleaner_gallery' ) ) {
 
-	function spine_cleaner_gallery( $output, $attr ) {
+	function cleaner_gallery( $output, $attr ) {
 
 		static $cleaner_gallery_instance = 0;
 		$cleaner_gallery_instance ++;

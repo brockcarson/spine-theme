@@ -33,3 +33,6 @@ Initial Release
 
 (02/04/2013)
 [+] Editor styles
+
+(02/07/2013)
+[!] Fixed bug in Hybrid layouts (layouts were swapped)
