@@ -131,6 +131,7 @@ if ( ! function_exists( 'cleaner_gallery' ) ) {
 			'7' => 'seven',
 			'8' => 'eight',
 			'9' => 'nine',
+			'10' => 'ten',
 		);
 		/* Open the gallery <div>. */
 		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' data-clearing>";
