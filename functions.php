@@ -25,9 +25,9 @@ function pdw_spine_theme_setup() {
 	add_image_size('featured', 637, 132, true);
 
 	/** Theme constants */
-	define ( 'PDW_SPINE_JS_URL', trailingslashit( get_stylesheet_directory_uri() . '/js' ) );
+	define ( 'PDW_SPINE_JS_URL', trailingslashit( get_template_directory_uri() . '/js' ) );
 
-	define ( 'PDW_SPINE_INC_DIR', trailingslashit( get_stylesheet_directory() . '/includes' ) );
+	define ( 'PDW_SPINE_INC_DIR', trailingslashit( get_template_directory() . '/includes' ) );
 
 	define ( 'PDW_SPINE_DIR', dirname( __FILE__ ) );
 
