@@ -19,7 +19,7 @@
 <?php do_atomic( 'before_content' ); // pdw_spine_before_content ?>
 
 <!-- Main Blog Content -->
-<div class="<?php echo $content_grid_classes; ?>" role="content">
+<div class="<?php echo $content_grid_classes; ?>" role="main">
 
 			<?php do_atomic( 'open_content' ); // pdw_spine_open_content ?>
 
