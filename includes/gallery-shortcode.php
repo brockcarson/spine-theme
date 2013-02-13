@@ -134,7 +134,7 @@ if ( ! function_exists( 'cleaner_gallery' ) ) {
 			'10' => 'ten',
 		);
 		/* Open the gallery <div>. */
-		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' class='block-grid {$numbers[$columns]}-up mobile-one-up' data-clearing>";
+		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' class='block-grid {$numbers[$columns]}-up mobile-one-up'>";
 
 		/* Loop through each attachment. */
 		foreach ( $attachments as $id => $attachment ) {

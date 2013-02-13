@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(13/02/2013)
+[!] Fixed bug in gallery shortcode
+[!] Fixed invalid ARIA role for main content
+[!] Replaced child theme function with correct parent theme function
+
 (02/09/2013)
 [!] Fixed bug in gallery shortcode
 [!] Added missing attachment template functions

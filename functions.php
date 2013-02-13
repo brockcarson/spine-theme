@@ -31,7 +31,7 @@ function pdw_spine_theme_setup() {
 
 	define ( 'PDW_SPINE_DIR', dirname( __FILE__ ) );
 
-	define( 'PDW_SPINE_VERSION', '1.2.0' );
+	define( 'PDW_SPINE_VERSION', '1.3.0' );
 
 	/** Template tags */
 	include_once PDW_SPINE_INC_DIR . 'template-tags.php';
