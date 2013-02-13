@@ -134,28 +134,28 @@ if ( ! function_exists( 'cleaner_gallery' ) ) {
 			'10' => 'ten',
 		);
 		/* Open the gallery <div>. */
-		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' data-clearing>";
+		$output = "\n\t\t\t<ul id='gallery-{$id}-{$cleaner_gallery_instance}' class='block-grid {$numbers[$columns]}-up mobile-one-up' data-clearing>";
 
 		/* Loop through each attachment. */
 		foreach ( $attachments as $id => $attachment ) {
 
 			/* Open each gallery row.		*/
-			if ( $columns > 0 && $i % $columns == 0 )
-				$output .= "\n\t\t\t\t<div class='block-grid {$numbers[$columns]}-up mobile-two-up'>";
+			//if ( $columns > 0 && $i % $columns == 0 )
+				//$output .= "\n\t\t\t\t<div class='block-grid {$numbers[$columns]}-up mobile-two-up'>";
 
 
 			/* Open each gallery item. */
-			$output .= "\n\t\t\t\t\t<{$itemtag} class='gallery-item col-{$columns}'>";
+			$output .= "\n\t\t\t\t\t<{$itemtag} class='th gallery-item col-{$columns}'>";
 
 			/* Open the element to wrap the image. */
-			$output .= "\n\t\t\t\t\t\t<{$icontag} class='th gallery-icon'>";
+			//$output .= "\n\t\t\t\t\t\t<{$icontag} class='th gallery-icon'>";
 
 			/* Add the image. */
 			$image = ( ( isset( $attr['link'] ) && 'file' == $attr['link'] ) ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false ) );
 			$output .= apply_filters( 'cleaner_gallery_image', $image, $id, $attr, $cleaner_gallery_instance );
 
 			/* Close the image wrapper. */
-			$output .= "</{$icontag}>";
+			//$output .= "</{$icontag}>";
 
 			/* Get the caption. */
 			$caption = apply_filters( 'cleaner_gallery_caption', wptexturize( $attachment->post_excerpt ), $id, $attr, $cleaner_gallery_instance );
@@ -168,15 +168,15 @@ if ( ! function_exists( 'cleaner_gallery' ) ) {
 			$output .= "\n\t\t\t\t\t</{$itemtag}>";
 
 			/* Close gallery row.		*/
-			if ( $columns > 0 && ++$i % $columns == 0 )
-				$output .= "\n\t\t\t\t</div>";
+			//if ( $columns > 0 && ++$i % $columns == 0 )
+			//	$output .= "\n\t\t\t\t</div>";
 
 
 		}
 
 		/* Close gallery row.  */
-		if ( $columns > 0 && $i % $columns !== 0 )
-			$output .= "\n\t\t\t</div>";
+		//if ( $columns > 0 && $i % $columns !== 0 )
+		//	$output .= "\n\t\t\t</div>";
 
 
 		/* Close the gallery <div>. */
