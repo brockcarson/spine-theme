@@ -8,6 +8,9 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(16/02/2013)
+[!] Fixes bug in layout logic and displaying sidebars
+
 (13/02/2013)
 [!] Fixed bug in gallery shortcode
 [!] Fixed invalid ARIA role for main content
