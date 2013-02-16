@@ -137,6 +137,10 @@ function pdw_spine_theme_setup() {
 		'container'  => 'hfeed',
 		'footer'     => 'page',
 	) );
+
+	/* Disable primary sidebar widgets when layout is one column. */
+	add_filter( 'sidebars_widgets', 'pdw_spine_disable_sidebars' );
+	add_action( 'template_redirect', 'pdw_spine_one_column' );
 }
 
 add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
@@ -207,10 +211,10 @@ function spine_sidebar_defaults($defaults){
 
 	/* Set up some default sidebar arguments. */
 	$spine = array(
-		'before_widget' => '<article id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+		'before_widget' => '<article id="%1$s" class="panel widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
 		'after_widget'  => '</div></article>',
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>'
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
 	);
 
 	array_merge($defaults,$spine);
@@ -371,14 +375,11 @@ function pdw_spine_fetch_content_grid_classes() {
 
 	/** Set the grid column span */
 	$span_cols = apply_filters( 'spine_content_span_cols', 'eight columns' );
-	/** Search and 404 pages get default layout */
-	if ( is_404() || is_search() ) {
-		$content_classes = $span_cols;
-	}
-	else {
+
 		/** Layout logic  */
-		$layout = get_post_layout( get_the_ID() );
-		if ( 'default' == $layout ) {
+		if(is_singular())
+			$layout = get_post_layout( get_the_ID() );
+		if ( empty($layout) || 'default' == $layout ) {
 			$layout = get_theme_mod( 'theme_layout' );
 		}
 		switch ( $layout ) {
@@ -398,22 +399,18 @@ function pdw_spine_fetch_content_grid_classes() {
 				$content_classes = $span_cols;
 				break;
 		} // end switch
-	} // end if
+
 	return $content_classes;
 }
 
 function pdw_spine_fetch_sidebar_grid_classes() {
 
-	$span_cols = apply_filters( 'spine_sidebar_span_cols', 'three columns offset-by-one' );
+	$span_cols = apply_filters( 'spine_sidebar_span_cols', 'four columns' );
 
-	/** Search and 404 pages get default layout */
-	if ( is_404() || is_search() ) {
-		$sidebar_classes = $span_cols;
-	}
-	else {
 		/** Layout logic  */
-		$layout = get_post_layout( get_the_ID() );
-		if ( 'default' == $layout ) {
+		if(is_singular())
+			$layout = get_post_layout( get_the_ID() );
+		if ( empty($layout) || 'default' == $layout ) {
 			$layout = get_theme_mod( 'theme_layout' );
 		}
 		switch ( $layout ) {
@@ -421,32 +418,71 @@ function pdw_spine_fetch_sidebar_grid_classes() {
 				$sidebar_classes = $span_cols;
 				break;
 			case '1c' :
+				/* Won't be displayed anyway */
 				$sidebar_classes = "twelve columns";
 				break;
 			case '2c-l':
 				$sidebar_classes = $span_cols;
 				break;
 			case '2c-r':
-				$sidebar_classes = $span_cols . " pull-nine";
+				$sidebar_classes = $span_cols . " pull-eight";
 				break;
 			default:
 				$sidebar_classes = $span_cols;
 				break;
 		} //end switch
-	} // end if
+
 	return $sidebar_classes;
 }
 
-function pdw_spine_class_names( $classes ) {
-	// add 'class-name' to the $classes array
-	$classes[] = hybrid_get_setting( 'color_scheme_select' );
-	// return the $classes array
-	return $classes;
+/**
+ * Function for deciding which pages should have a one-column layout.
+ *
+ * @since 1.2.0
+ */
+function pdw_spine_one_column() {
+
+	if ( ! ( is_active_sidebar( 'primary' ) )  || ( is_attachment() && 'layout-default' == theme_layouts_get_layout() ) )
+		add_filter( 'get_theme_layout', 'pdw_spine_theme_layout_one_column' );
+
 }
 
-//Now add test class to the filter
-add_filter( 'body_class', 'pdw_spine_class_names' );
+/**
+ * Filters 'get_theme_layout' by returning 'layout-1c'.
+ *
+ * @since 1.2.0
+ * @param string $layout The layout of the current page.
+ * @return string
+ */
+function pdw_spine_theme_layout_one_column( $layout ) {
+	return 'layout-1c';
+}
 
+/**
+ * Disables sidebars if viewing a one-column page.
+ *
+ * @since 1.2.0
+ * @param array $sidebars_widgets A multidimensional array of sidebars and widgets.
+ * @return array $sidebars_widgets
+ */
+function pdw_spine_disable_sidebars( $sidebars_widgets ) {
+	global $wp_query, $wp_customize;
+
+	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() ) {
+		if ( ! isset( $wp_customize ) ) {
+			if ( 'layout-1c' == theme_layouts_get_layout() ) {
+				$sidebars_widgets['primary'] = false;
+				//$sidebars_widgets['secondary'] = false;
+			}
+		}
+	}
+
+	return $sidebars_widgets;
+}
+
+/**
+ * Insert customizer styles to document head
+ */
 function pdw_spine_wp_head() {
 	$body_color = hybrid_get_setting( 'body_color' );
 	$headline_color = hybrid_get_setting( 'headline_color' );
