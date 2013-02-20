@@ -25,7 +25,8 @@ if ( has_nav_menu( 'primary' ) ) : ?>
 				'menu_class' => 'nav-bar',
 				'menu_id' => 'primary-nav',
 				'fallback_cb' => '',
-				'walker' => new NavBar_Walker('left')
+				'walker' => new NavBar_Walker('left'),
+				'depth' => 2
 			) );
 			?>
 

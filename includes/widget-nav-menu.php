@@ -113,7 +113,7 @@ class Spine_Widget_Nav_Menu extends Hybrid_Widget_Nav_Menu {
 			'container_class' => '',
 			'menu_id'         => '',
 			'menu_class'      => 'nav-bar vertical',
-			'depth'           => 0,
+			'depth'           => 2,
 			'before'          => '',
 			'after'           => '',
 			'link_before'     => '',
