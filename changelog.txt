@@ -8,11 +8,16 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(16/02/2013)
+(02/20/2013)
+[!] Escaped home_url in header.php with esc_url
+[!] Limited depth of navbar menu to 2
+[!] Removed header instruction in 404 template
+
+(02/16/2013)
 [!] Fixes bug in layout logic and displaying sidebars
 
-(13/02/2013)
-[!] Fixed bug in gallery shortcode
+(02/13/2013)
+[/] Fixed bug in gallery shortcode
 [!] Fixed invalid ARIA role for main content
 [!] Replaced child theme function with correct parent theme function
 

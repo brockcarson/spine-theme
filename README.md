@@ -21,8 +21,16 @@ Full width, Content-sidebar and Sidebar-Content, plus an extra page template con
 
 Spine is translation ready and has a RTL stylesheet.
 
-And much more...
+## Note about the Top Bar navigation menu:  ##
+The top bar menu is activated by assigning a custom menu to the secondary menu location.
+There is an important restriction for this menu: it will not wrap when there are more top level items that fit on one line.
+ Well, it does wrap, but it is not usable.
 
+ ## Note about the Navbar menu:  ##
+ The nav bar menu is activated by assigning a custom menu to the primary menu location.
+ There is an important restriction for this menu: it is limited to 2 levels of depth.
+ There is an important restriction for this menu: it will not wrap when there are more top level items that fit on one line.
+ Well, it does wrap, but it is not usable.
 
 
 
