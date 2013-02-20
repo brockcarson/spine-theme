@@ -5335,3 +5335,11 @@ td.label {
 .gform_validation_container {
 	display: none;
 }
+
+.nav-bar > li {
+	background: #4D4D4D;
+}
+
+.top-bar ul > li {
+	background: #222;
+}
