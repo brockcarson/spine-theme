@@ -42,7 +42,7 @@
 		<div class="row">
 			<div class="seven columns">
 				<h1 id="site-title">
-					<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</h1>
 			</div>
 			<div class="five columns">
