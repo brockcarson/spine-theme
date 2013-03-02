@@ -49,14 +49,14 @@ function pdw_spine_customize_register( $wp_customize ) {
 
 
 		/* Add the color scheme section. */
-		$wp_customize->add_section(
+/*		$wp_customize->add_section(
 			'spine-scheme',
 			array(
 				'title'      => esc_html__( 'Color Scheme', 'spine' ),
 				'priority'   => 200,
 				'capability' => 'edit_theme_options'
 			)
-		);
+		);*/
 
 		/*Add the ' color scheme ' setting.
 		$wp_customize->add_setting(
@@ -103,7 +103,7 @@ $wp_customize->add_control( 'spine_color_scheme', array(
 $wp_customize->add_control(
 	new WP_Customize_Color_Control($wp_customize,'headline_color',
 	array('label' => __('Headline color','spine'),
-	'section' => 'spine-scheme',
+	'section' => 'colors',
 	'settings'=> "{$prefix}_theme_settings[headline_color]",
 	)
 	)
@@ -124,7 +124,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control($wp_customize,'body_color',
 			array('label' => __('Body Text color','spine'),
-						'section' => 'spine-scheme',
+						'section' => 'colors',
 						'settings'=> "{$prefix}_theme_settings[body_color]",
 			)
 		)
@@ -145,7 +145,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control($wp_customize,'link_color',
 			array('label' => __('Link Text color','spine'),
-						'section' => 'spine-scheme',
+						'section' => 'colors',
 						'settings'=> "{$prefix}_theme_settings[link_color]",
 			)
 		)
@@ -166,7 +166,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control($wp_customize,'link_hover_color',
 			array('label' => __('Link Hover Text color','spine'),
-						'section' => 'spine-scheme',
+						'section' => 'colors',
 						'settings'=> "{$prefix}_theme_settings[link_hover_color]",
 			)
 		)

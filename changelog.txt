@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(03/02/2013)
+[+] Added logo upload to customizer
+[+] ADded footer widget area
+[+] Moved color pickers to colors section
+
 (02/20/2013)
 [!] Escaped home_url in header.php with esc_url
 [!] Limited depth of navbar menu to 2
