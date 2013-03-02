@@ -158,6 +158,28 @@ $wp_customize->add_control(
 		)
 	);
 
+	$wp_customize->add_setting(
+		"{$prefix}_theme_settings[logo_upload]",
+		array(
+			'default'              => '',
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'transport'            => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'logo_upload',
+			array(
+				'label' => 'Logo Upload',
+				'section' => 'title_tagline',
+				'settings' => "{$prefix}_theme_settings[logo_upload]"
+			)
+		)
+	);
+
 	/* If viewing the customize preview screen, add a script to show a live preview. */
 		if ( $wp_customize->is_preview() && !is_admin() )
 			add_action( 'wp_footer', 'pdw_spine_customize_preview_script', 21 );
@@ -212,17 +234,10 @@ function pdw_spine_customize_preview_script() {
 				$('a:link,a:visited').css('color', to );
 			});
 		});
-		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[link_hover_color]',function( value ) {
-			var linkColor = $('a').css('color');
+		
+		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[logo_upload]',function( value ) {
 			value.bind(function(to) {
-				$('a').on({
-					mouseenter: function(to){
-						$(this).css('color', to );
-					},
-					mouseleave: function(linkColor){
-						$(this).css('color', linkColor );
-					}
-				})
+				$('#site-title img').attr('src', to);
 			});
 		});
 	} )( jQuery )

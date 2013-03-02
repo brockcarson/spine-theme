@@ -42,7 +42,11 @@
 		<div class="row">
 			<div class="seven columns">
 				<h1 id="site-title">
-					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+					<?php $logo_url = hybrid_get_setting( 'logo_upload' ); if( empty( $logo_url ) ) : ?>
+						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+					<?php else: ?>
+					<img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+					<?php endif; ?>
 				</h1>
 			</div>
 			<div class="five columns">

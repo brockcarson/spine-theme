@@ -141,6 +141,9 @@ function pdw_spine_theme_setup() {
 	/* Disable primary sidebar widgets when layout is one column. */
 	add_filter( 'sidebars_widgets', 'pdw_spine_disable_sidebars' );
 	add_action( 'template_redirect', 'pdw_spine_one_column' );
+
+	// Add customizer styles to frontend
+	add_action( 'wp_head', 'pdw_spine_wp_head' );
 }
 
 add_action( 'after_setup_theme', 'pdw_spine_theme_setup' );
@@ -491,7 +494,7 @@ function pdw_spine_wp_head() {
 
 	echo "<style> body { color: $body_color; } h1, h2, h3, h4, h5, h6 { color: $headline_color } a { color: $link_color; } a:hover { color: $link_hover_color; } </style>";
 }
-add_action( 'wp_head', 'pdw_spine_wp_head' );
+
 
 /**
  * Returns a set of image attachment links based on size.
@@ -580,7 +583,7 @@ function spine_image_info() {
 			$shutter_speed = $meta['image_meta']['shutter_speed'];
 		}
 
-		$items['shutter_speed'] = sprintf( __( '<span class="prep">Shutter Speed:</span> %s', 'spine' ), '<span class="image-data">' . sprintf( __( '%s sec', 'picturesque' ), $shutter_speed ) . '</span>' );
+		$items['shutter_speed'] = sprintf( __( '<span class="prep">Shutter Speed:</span> %s', 'spine' ), '<span class="image-data">' . sprintf( __( '%s sec', 'spine' ), $shutter_speed ) . '</span>' );
 	}
 
 	/* Allow devs to overwrite the array of items. */
