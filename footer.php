@@ -19,6 +19,11 @@ get_sidebar( 'primary' );
 
 <!-- End Main Content and Sidebar -->
 
+<!-- Subsidiary widget area -->
+
+
+		<?php get_sidebar('subsidiary'); ?>
+
 
 <!-- Footer -->
 

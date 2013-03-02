@@ -55,7 +55,7 @@ function pdw_spine_theme_setup() {
 
 	/** Add theme support for core framework features. */
 	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
-	add_theme_support( 'hybrid-core-sidebars', array( 'primary' ) );
+	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 
@@ -128,7 +128,7 @@ function pdw_spine_theme_setup() {
 	/** Register widget areas */
 	add_action('widgets_init', 'pdw_spine_register_sidebars', 11);
 
-	add_filter("{$prefix}_sidebar_defaults", 'spine_sidebar_defaults');
+	add_filter("{$prefix}_sidebar_defaults", 'spine_sidebar_defaults', 10, 2);
 
 	add_editor_style();
 
@@ -210,15 +210,26 @@ function pdw_spine_register_sidebars(){
 	);
 }
 
-function spine_sidebar_defaults($defaults){
+function spine_sidebar_defaults($defaults, $sidebar){
 
-	/* Set up some default sidebar arguments. */
-	$spine = array(
-		'before_widget' => '<article id="%1$s" class="panel widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
-		'after_widget'  => '</div></article>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>'
-	);
+	if('subsidiary' == $sidebar){
+		/* Set up some default sidebar arguments. */
+		$spine = array(
+			'before_widget' => '<article id="%1$s" class="six columns widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+			'after_widget'  => '</div></article>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>'
+		);
+	} else{
+		/* Set up some default sidebar arguments. */
+		$spine = array(
+			'before_widget' => '<article id="%1$s" class="panel widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+			'after_widget'  => '</div></article>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>'
+		);
+	}
+
 
 	array_merge($defaults,$spine);
 	return $spine;
