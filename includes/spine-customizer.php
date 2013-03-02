@@ -12,6 +12,9 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+/* Load custom control classes. */
+add_action( 'customize_register', 'pdw_spine_load_customize_controls', 1 );
+
 /* Register custom sections, settings, and controls. */
 add_action( 'customize_register', 'pdw_spine_customize_register' );
 
@@ -19,7 +22,18 @@ add_action( 'customize_register', 'pdw_spine_customize_register' );
 add_action( 'wp_ajax_pdw_spine_customize_footer_content', 'pdw_spine_customize_colors_ajax' );
 add_action( 'wp_ajax_nopriv_pdw_spine_customize_footer_content', 'pdw_spine_customize_colors_ajax' );
 
+/**
+ * Loads framework-specific customize control classes.  Customize control classes extend the WordPress
+ * WP_Customize_Control class to create unique classes that can be used within the framework.
+ *
+ * @since 1.4.0
+ * @access private
+ */
+function pdw_spine_load_customize_controls() {
 
+	/* Loads the textarea customize control class. */
+	require_once( 'customize-control-image-upload-reloaded.php' );
+}
 
 /**
  * Registers custom sections, settings, and controls for the $wp_customize instance.
@@ -169,7 +183,7 @@ $wp_customize->add_control(
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new My_Customize_Image_Reloaded_Control(
 			$wp_customize,
 			'logo_upload',
 			array(
@@ -234,7 +248,7 @@ function pdw_spine_customize_preview_script() {
 				$('a:link,a:visited').css('color', to );
 			});
 		});
-		
+
 		wp.customize('<?php echo hybrid_get_prefix(); ?>_theme_settings[logo_upload]',function( value ) {
 			value.bind(function(to) {
 				$('#site-title img').attr('src', to);
