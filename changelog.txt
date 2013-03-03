@@ -8,6 +8,9 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(03/03/2013)
+[!] Fixed missing header banner area
+
 (03/02/2013)
 [+] Added logo upload to customizer
 [+] ADded footer widget area
