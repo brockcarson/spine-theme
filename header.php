@@ -36,7 +36,7 @@
 <body class="<?php hybrid_body_class(); ?>">
 
 <?php get_template_part( 'menu', 'secondary' ); // Loads the menu-primary.php template. ?>
-<div class="row">
+<header role="banner" class="row">
 	<div class="twelve columns">
 
 		<div class="row">
@@ -48,23 +48,22 @@
 					<img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 					<?php endif; ?>
 				</h1>
-			</div>
+			</div><!-- end seven columns -->
 			<div class="five columns">
 				<h2 id="site-description">
 					<small><?php bloginfo( 'description' ); ?></small>
 				</h2>
-			</div>
-		</div>
+			</div><!-- end five columns -->
+		</div><!-- end row -->
 
 		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 
 		<?php if ( get_header_image() ) echo '<img class="header-image" src="' . esc_url( get_header_image() ) . '" alt="" />'; ?>
 
 		<hr />
-	</div>
-</div>
+	</div><!-- end twelve columns -->
+</header><!-- End row -->
 
-<!-- End Nav -->
 
 
 <!-- Main Page Content and Sidebar -->

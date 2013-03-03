@@ -19,7 +19,7 @@
 
 <?php do_atomic( 'before_sidebar_primary' ); // spine_before_sidebar_primary ?>
 <?php $sidebar_grid_classes = pdw_spine_fetch_sidebar_grid_classes(); ?>
-<aside class="<?php echo $sidebar_grid_classes; ?>">
+<aside role="complementary" class="<?php echo $sidebar_grid_classes; ?>">
 
 	<?php do_atomic( 'open_sidebar_primary' ); // spine_open_sidebar_primary ?>
 

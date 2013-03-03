@@ -215,7 +215,7 @@ function spine_sidebar_defaults($defaults, $sidebar){
 	if('subsidiary' == $sidebar){
 		/* Set up some default sidebar arguments. */
 		$spine = array(
-			'before_widget' => '<article id="%1$s" class="six columns widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+			'before_widget' => '<article role="article" id="%1$s" class="six columns widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
 			'after_widget'  => '</div></article>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>'
@@ -223,7 +223,7 @@ function spine_sidebar_defaults($defaults, $sidebar){
 	} else{
 		/* Set up some default sidebar arguments. */
 		$spine = array(
-			'before_widget' => '<article id="%1$s" class="panel widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+			'before_widget' => '<article role="article" id="%1$s" class="panel widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
 			'after_widget'  => '</div></article>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>'

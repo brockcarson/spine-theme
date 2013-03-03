@@ -14,7 +14,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 ?>
-<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+<article role="article" id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
     <div class="row">
 			<?php do_atomic( 'open_entry' ); // spine_open_entry ?>
 

@@ -27,7 +27,7 @@ get_sidebar( 'primary' );
 
 <!-- Footer -->
 
-<footer class="row">
+<footer class="row" role="contentinfo">
 	<div class="twelve columns">
 		<hr />
 		<div class="row">
